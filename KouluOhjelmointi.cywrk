@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="KouluOhjelmointi" persistent="KouluOhjelmointi.cywrk" platform="NOT_USED">
+<current_project name=".\Exercise19.cydsn\Exercise19.cyprj" />
+<wrkspc_folders />
+<files />
+<projects>
+<v>.\Exercise1.cydsn\Exercise1.cyprj</v>
+<v>.\Exercise2.cydsn\Exercise2.cyprj</v>
+<v>.\Exercise3.cydsn\Exercise3.cyprj</v>
+<v>.\Exercise4.cydsn\Exercise4.cyprj</v>
+<v>.\Exercise5.cydsn\Exercise5.cyprj</v>
+<v>.\Exercise6.cydsn\Exercise6.cyprj</v>
+<v>.\Exercise7.cydsn\Exercise7.cyprj</v>
+<v>.\Exercise8.cydsn\Exercise8.cyprj</v>
+<v>.\Exercise9.cydsn\Exercise9.cyprj</v>
+<v>.\Exercise10.cydsn\Exercise10.cyprj</v>
+<v>.\Exercise11.cydsn\Exercise11.cyprj</v>
+<v>.\Exercise12.cydsn\Exercise12.cyprj</v>
+<v>.\Exercise13.cydsn\Exercise13.cyprj</v>
+<v>.\Exercise14.cydsn\Exercise14.cyprj</v>
+<v>.\Exercise15.cydsn\Exercise15.cyprj</v>
+<v>.\Exercise16.cydsn\Exercise16.cyprj</v>
+<v>.\Exercise17.cydsn\Exercise17.cyprj</v>
+<v>.\Exercise18.cydsn\Exercise18.cyprj</v>
+<v>.\Exercise19.cydsn\Exercise19.cyprj</v>
+<v>.\Exercise20.cydsn\Exercise20.cyprj</v>
+<v>.\Exercise21.cydsn\Exercise21.cyprj</v>
+</projects>
+<workspace_id v="daf34c09-8f97-41b0-a917-2e31f247cc20" />
+<WriteAppVersionLastSavedWith v="4.0.0.432" />
+<WriteAppMarketingVersionLastSavedWith v="4.0 Update 1" />
+<CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize+CyPrjDependencyList" version="4">
+<wrkspc_dependencies />
+</CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316>
+<CyGuid_63b68103-67f5-4406-8da6-5c8625765b82 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize+CyIgnoredSystemDepsList" version="1">
+<wrkspc_dependencies />
+</CyGuid_63b68103-67f5-4406-8da6-5c8625765b82>
+</CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd>
+</CyXmlSerializer>

@@ -1,0 +1,1498 @@
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_fdiv
+  19              		.global	__aeabi_fcmple
+  20              		.section	.text.calibrateWhite,"ax",%progbits
+  21              		.align	2
+  22              		.global	calibrateWhite
+  23              		.thumb
+  24              		.thumb_func
+  25              		.type	calibrateWhite, %function
+  26              	calibrateWhite:
+  27              	.LFB64:
+  28              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include "stdio.h"
+  14:main.c        **** #include <stdlib.h>
+  15:main.c        **** #include <time.h>
+  16:main.c        **** 
+  17:main.c        **** float calibrateWhite(float white1, float white2);
+  18:main.c        **** 
+  19:main.c        **** int main(void)
+  20:main.c        **** {
+  21:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  22:main.c        **** 
+  23:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  24:main.c        ****     UART_1_Start();
+  25:main.c        ****     
+  26:main.c        ****     float white1 = 3300;
+  27:main.c        ****     float white2 = 8300;
+  28:main.c        ****     float black = 23999;
+  29:main.c        ****     float reading = 0;
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 2
+
+
+  30:main.c        ****     
+  31:main.c        ****     reading = calibrateWhite(white1, white2);
+  32:main.c        ****     
+  33:main.c        ****     printf("result: %f \n",reading);
+  34:main.c        **** 
+  35:main.c        ****     
+  36:main.c        ****     return 0;
+  37:main.c        ****    
+  38:main.c        **** }
+  39:main.c        **** float calibrateWhite(float white1, float white2)
+  40:main.c        **** {
+  29              		.loc 1 40 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              	.LVL0:
+  34 0000 70B5     		push	{r4, r5, r6, lr}
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 4, -16
+  37              		.cfi_offset 5, -12
+  38              		.cfi_offset 6, -8
+  39              		.cfi_offset 14, -4
+  40 0002 0546     		mov	r5, r0
+  41 0004 0C46     		mov	r4, r1
+  42              	.LVL1:
+  43              	.L2:
+  41:main.c        **** 
+  42:main.c        ****     float result1 = 0;
+  43:main.c        **** 
+  44:main.c        ****     do
+  45:main.c        ****     {
+  46:main.c        ****     
+  47:main.c        **** 	result1 = white2 / white1;
+  44              		.loc 1 47 0 discriminator 1
+  45 0006 2046     		mov	r0, r4
+  46 0008 2946     		mov	r1, r5
+  47 000a FFF7FEFF 		bl	__aeabi_fdiv
+  48              	.LVL2:
+  49 000e 0646     		mov	r6, r0
+  50              	.LVL3:
+  48:main.c        ****     }
+  49:main.c        ****     while(white1 <= white2 && white2 >= white1);
+  51              		.loc 1 49 0 discriminator 1
+  52 0010 2846     		mov	r0, r5
+  53              	.LVL4:
+  54 0012 2146     		mov	r1, r4
+  55 0014 FFF7FEFF 		bl	__aeabi_fcmple
+  56              	.LVL5:
+  57 0018 0028     		cmp	r0, #0
+  58 001a F4D1     		bne	.L2
+  50:main.c        ****     
+  51:main.c        ****     return result1;
+  52:main.c        **** }
+  59              		.loc 1 52 0
+  60 001c 3046     		mov	r0, r6
+  61 001e 70BD     		pop	{r4, r5, r6, pc}
+  62              		.cfi_endproc
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 3
+
+
+  63              	.LFE64:
+  64              		.size	calibrateWhite, .-calibrateWhite
+  65              		.global	__aeabi_f2d
+  66              		.section	.text.main,"ax",%progbits
+  67              		.align	2
+  68              		.global	main
+  69              		.thumb
+  70              		.thumb_func
+  71              		.type	main, %function
+  72              	main:
+  73              	.LFB63:
+  20:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  74              		.loc 1 20 0
+  75              		.cfi_startproc
+  76              		@ args = 0, pretend = 0, frame = 0
+  77              		@ frame_needed = 0, uses_anonymous_args = 0
+  78 0000 08B5     		push	{r3, lr}
+  79              		.cfi_def_cfa_offset 8
+  80              		.cfi_offset 3, -8
+  81              		.cfi_offset 14, -4
+  21:main.c        **** 
+  82              		.loc 1 21 0
+  83              	@ 21 "main.c" 1
+  84 0002 62B6     		CPSIE   i
+  85              	@ 0 "" 2
+  24:main.c        ****     
+  86              		.loc 1 24 0
+  87              		.thumb
+  88 0004 FFF7FEFF 		bl	UART_1_Start
+  89              	.LVL6:
+  31:main.c        ****     
+  90              		.loc 1 31 0
+  91 0008 0648     		ldr	r0, .L6
+  92 000a 0749     		ldr	r1, .L6+4
+  93 000c FFF7FEFF 		bl	calibrateWhite
+  94              	.LVL7:
+  33:main.c        **** 
+  95              		.loc 1 33 0
+  96 0010 FFF7FEFF 		bl	__aeabi_f2d
+  97              	.LVL8:
+  98 0014 0246     		mov	r2, r0
+  99 0016 0B46     		mov	r3, r1
+ 100 0018 0448     		ldr	r0, .L6+8
+ 101 001a FFF7FEFF 		bl	printf
+ 102              	.LVL9:
+  38:main.c        **** float calibrateWhite(float white1, float white2)
+ 103              		.loc 1 38 0
+ 104 001e 0020     		movs	r0, #0
+ 105 0020 08BD     		pop	{r3, pc}
+ 106              	.L7:
+ 107 0022 00BF     		.align	2
+ 108              	.L6:
+ 109 0024 00404E45 		.word	1162756096
+ 110 0028 00B00146 		.word	1174515712
+ 111 002c 00000000 		.word	.LC0
+ 112              		.cfi_endproc
+ 113              	.LFE63:
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 4
+
+
+ 114              		.size	main, .-main
+ 115              		.section	.text._write,"ax",%progbits
+ 116              		.align	2
+ 117              		.global	_write
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	_write, %function
+ 121              	_write:
+ 122              	.LFB65:
+  53:main.c        **** 
+  54:main.c        **** int _write(int file, char *ptr, int len)
+  55:main.c        **** {
+ 123              		.loc 1 55 0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              	.LVL10:
+ 128 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 129              		.cfi_def_cfa_offset 24
+ 130              		.cfi_offset 3, -24
+ 131              		.cfi_offset 4, -20
+ 132              		.cfi_offset 5, -16
+ 133              		.cfi_offset 6, -12
+ 134              		.cfi_offset 7, -8
+ 135              		.cfi_offset 14, -4
+ 136 0002 0C46     		mov	r4, r1
+ 137 0004 1746     		mov	r7, r2
+ 138              	.LVL11:
+  56:main.c        ****     (void)file; /* Parameter is not used, suppress unused argument warning */
+  57:main.c        **** 	int n;
+  58:main.c        **** 	for(n = 0; n < len; n++) {
+ 139              		.loc 1 58 0
+ 140 0006 0025     		movs	r5, #0
+ 141 0008 0BE0     		b	.L9
+ 142              	.LVL12:
+ 143              	.L11:
+  59:main.c        ****         if(*ptr == '\n') UART_1_PutChar('\r');
+ 144              		.loc 1 59 0
+ 145 000a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 146 000c 0A2B     		cmp	r3, #10
+ 147 000e 02D1     		bne	.L10
+ 148              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 149 0010 0D20     		movs	r0, #13
+ 150 0012 FFF7FEFF 		bl	UART_1_PutChar
+ 151              	.LVL13:
+ 152              	.L10:
+  60:main.c        **** 		UART_1_PutChar(*ptr++);
+ 153              		.loc 1 60 0 is_stmt 1 discriminator 2
+ 154 0016 661C     		adds	r6, r4, #1
+ 155              	.LVL14:
+ 156 0018 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 157 001a FFF7FEFF 		bl	UART_1_PutChar
+ 158              	.LVL15:
+  58:main.c        ****         if(*ptr == '\n') UART_1_PutChar('\r');
+ 159              		.loc 1 58 0 discriminator 2
+ 160 001e 0135     		adds	r5, r5, #1
+ 161              	.LVL16:
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 5
+
+
+ 162              		.loc 1 60 0 discriminator 2
+ 163 0020 3446     		mov	r4, r6
+ 164              	.LVL17:
+ 165              	.L9:
+  58:main.c        ****         if(*ptr == '\n') UART_1_PutChar('\r');
+ 166              		.loc 1 58 0 discriminator 1
+ 167 0022 BD42     		cmp	r5, r7
+ 168 0024 F1DB     		blt	.L11
+  61:main.c        **** 	}
+  62:main.c        **** 	return len;
+  63:main.c        **** }
+ 169              		.loc 1 63 0
+ 170 0026 3846     		mov	r0, r7
+ 171 0028 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 172              		.cfi_endproc
+ 173              	.LFE65:
+ 174              		.size	_write, .-_write
+ 175 002a 00BF     		.section	.text._read,"ax",%progbits
+ 176              		.align	2
+ 177              		.global	_read
+ 178              		.thumb
+ 179              		.thumb_func
+ 180              		.type	_read, %function
+ 181              	_read:
+ 182              	.LFB66:
+  64:main.c        **** 
+  65:main.c        **** int _read (int file, char *ptr, int count)
+  66:main.c        **** {
+ 183              		.loc 1 66 0
+ 184              		.cfi_startproc
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              	.LVL18:
+ 188 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 189              		.cfi_def_cfa_offset 24
+ 190              		.cfi_offset 3, -24
+ 191              		.cfi_offset 4, -20
+ 192              		.cfi_offset 5, -16
+ 193              		.cfi_offset 6, -12
+ 194              		.cfi_offset 7, -8
+ 195              		.cfi_offset 14, -4
+ 196 0002 0F46     		mov	r7, r1
+ 197 0004 1446     		mov	r4, r2
+ 198              	.LVL19:
+  67:main.c        ****     int chs = 0;
+ 199              		.loc 1 67 0
+ 200 0006 0026     		movs	r6, #0
+  68:main.c        ****     char ch;
+  69:main.c        ****  
+  70:main.c        ****     (void)file; /* Parameter is not used, suppress unused argument warning */
+  71:main.c        ****     while(count > 0) {
+ 201              		.loc 1 71 0
+ 202 0008 12E0     		b	.L15
+ 203              	.LVL20:
+ 204              	.L18:
+  72:main.c        ****         ch = UART_1_GetChar();
+ 205              		.loc 1 72 0
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 6
+
+
+ 206 000a FFF7FEFF 		bl	UART_1_GetChar
+ 207              	.LVL21:
+  73:main.c        ****         if(ch != 0) {
+ 208              		.loc 1 73 0
+ 209 000e 0546     		mov	r5, r0
+ 210 0010 70B1     		cbz	r0, .L15
+  74:main.c        ****             UART_1_PutChar(ch);
+ 211              		.loc 1 74 0
+ 212 0012 FFF7FEFF 		bl	UART_1_PutChar
+ 213              	.LVL22:
+  75:main.c        ****             chs++;
+ 214              		.loc 1 75 0
+ 215 0016 0136     		adds	r6, r6, #1
+ 216              	.LVL23:
+  76:main.c        ****             if(ch == '\r') {
+ 217              		.loc 1 76 0
+ 218 0018 0D2D     		cmp	r5, #13
+ 219 001a 03D1     		bne	.L16
+ 220              	.LVL24:
+  77:main.c        ****                 ch = '\n';
+  78:main.c        ****                 UART_1_PutChar(ch);
+ 221              		.loc 1 78 0
+ 222 001c 0A20     		movs	r0, #10
+ 223 001e FFF7FEFF 		bl	UART_1_PutChar
+ 224              	.LVL25:
+  77:main.c        ****                 ch = '\n';
+ 225              		.loc 1 77 0
+ 226 0022 0A25     		movs	r5, #10
+ 227              	.LVL26:
+ 228              	.L16:
+  79:main.c        ****             }
+  80:main.c        ****             *ptr++ = ch;
+ 229              		.loc 1 80 0
+ 230 0024 7B1C     		adds	r3, r7, #1
+ 231              	.LVL27:
+ 232 0026 3D70     		strb	r5, [r7]
+  81:main.c        ****             count--;
+ 233              		.loc 1 81 0
+ 234 0028 013C     		subs	r4, r4, #1
+ 235              	.LVL28:
+  82:main.c        ****             if(ch == '\n') break;
+ 236              		.loc 1 82 0
+ 237 002a 0A2D     		cmp	r5, #10
+ 238 002c 02D0     		beq	.L17
+  80:main.c        ****             count--;
+ 239              		.loc 1 80 0
+ 240 002e 1F46     		mov	r7, r3
+ 241              	.LVL29:
+ 242              	.L15:
+  71:main.c        ****         ch = UART_1_GetChar();
+ 243              		.loc 1 71 0
+ 244 0030 002C     		cmp	r4, #0
+ 245 0032 EADC     		bgt	.L18
+ 246              	.LVL30:
+ 247              	.L17:
+  83:main.c        ****         }
+  84:main.c        ****     }
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 7
+
+
+  85:main.c        ****     return chs;
+  86:main.c        **** }
+ 248              		.loc 1 86 0
+ 249 0034 3046     		mov	r0, r6
+ 250 0036 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 251              		.cfi_endproc
+ 252              	.LFE66:
+ 253              		.size	_read, .-_read
+ 254              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 255              		.align	2
+ 256              	.LC0:
+ 257 0000 72657375 		.ascii	"result: %f \012\000"
+ 257      6C743A20 
+ 257      2566200A 
+ 257      00
+ 258 000d 000000   		.text
+ 259              	.Letext0:
+ 260              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 261              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 262              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 263              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 264              		.file 6 "Generated_Source\\PSoC5/UART_1.h"
+ 265              		.file 7 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 266              		.section	.debug_info,"",%progbits
+ 267              	.Ldebug_info0:
+ 268 0000 C6020000 		.4byte	0x2c6
+ 269 0004 0400     		.2byte	0x4
+ 270 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 271 000a 04       		.byte	0x4
+ 272 000b 01       		.uleb128 0x1
+ 273 000c A1000000 		.4byte	.LASF27
+ 274 0010 01       		.byte	0x1
+ 275 0011 8E010000 		.4byte	.LASF28
+ 276 0015 9A010000 		.4byte	.LASF29
+ 277 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 278 001d 00000000 		.4byte	0
+ 279 0021 00000000 		.4byte	.Ldebug_line0
+ 280 0025 02       		.uleb128 0x2
+ 281 0026 01       		.byte	0x1
+ 282 0027 06       		.byte	0x6
+ 283 0028 16020000 		.4byte	.LASF0
+ 284 002c 02       		.uleb128 0x2
+ 285 002d 01       		.byte	0x1
+ 286 002e 08       		.byte	0x8
+ 287 002f 8E000000 		.4byte	.LASF1
+ 288 0033 02       		.uleb128 0x2
+ 289 0034 02       		.byte	0x2
+ 290 0035 05       		.byte	0x5
+ 291 0036 FD010000 		.4byte	.LASF2
+ 292 003a 02       		.uleb128 0x2
+ 293 003b 02       		.byte	0x2
+ 294 003c 07       		.byte	0x7
+ 295 003d 1F000000 		.4byte	.LASF3
+ 296 0041 03       		.uleb128 0x3
+ 297 0042 15000000 		.4byte	.LASF9
+ 298 0046 02       		.byte	0x2
+ 299 0047 3F       		.byte	0x3f
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 8
+
+
+ 300 0048 4C000000 		.4byte	0x4c
+ 301 004c 02       		.uleb128 0x2
+ 302 004d 04       		.byte	0x4
+ 303 004e 05       		.byte	0x5
+ 304 004f 0D020000 		.4byte	.LASF4
+ 305 0053 02       		.uleb128 0x2
+ 306 0054 04       		.byte	0x4
+ 307 0055 07       		.byte	0x7
+ 308 0056 69000000 		.4byte	.LASF5
+ 309 005a 02       		.uleb128 0x2
+ 310 005b 08       		.byte	0x8
+ 311 005c 05       		.byte	0x5
+ 312 005d 80010000 		.4byte	.LASF6
+ 313 0061 02       		.uleb128 0x2
+ 314 0062 08       		.byte	0x8
+ 315 0063 07       		.byte	0x7
+ 316 0064 4B010000 		.4byte	.LASF7
+ 317 0068 04       		.uleb128 0x4
+ 318 0069 04       		.byte	0x4
+ 319 006a 05       		.byte	0x5
+ 320 006b 696E7400 		.ascii	"int\000"
+ 321 006f 02       		.uleb128 0x2
+ 322 0070 04       		.byte	0x4
+ 323 0071 07       		.byte	0x7
+ 324 0072 3E010000 		.4byte	.LASF8
+ 325 0076 03       		.uleb128 0x3
+ 326 0077 68010000 		.4byte	.LASF10
+ 327 007b 03       		.byte	0x3
+ 328 007c 2C       		.byte	0x2c
+ 329 007d 41000000 		.4byte	0x41
+ 330 0081 05       		.uleb128 0x5
+ 331 0082 07020000 		.4byte	.LASF11
+ 332 0086 04       		.byte	0x4
+ 333 0087 9201     		.2byte	0x192
+ 334 0089 2C000000 		.4byte	0x2c
+ 335 008d 02       		.uleb128 0x2
+ 336 008e 04       		.byte	0x4
+ 337 008f 04       		.byte	0x4
+ 338 0090 41000000 		.4byte	.LASF12
+ 339 0094 02       		.uleb128 0x2
+ 340 0095 08       		.byte	0x8
+ 341 0096 04       		.byte	0x4
+ 342 0097 32000000 		.4byte	.LASF13
+ 343 009b 02       		.uleb128 0x2
+ 344 009c 01       		.byte	0x1
+ 345 009d 08       		.byte	0x8
+ 346 009e 95010000 		.4byte	.LASF14
+ 347 00a2 02       		.uleb128 0x2
+ 348 00a3 04       		.byte	0x4
+ 349 00a4 07       		.byte	0x7
+ 350 00a5 77010000 		.4byte	.LASF15
+ 351 00a9 06       		.uleb128 0x6
+ 352 00aa 04       		.byte	0x4
+ 353 00ab 9B000000 		.4byte	0x9b
+ 354 00af 06       		.uleb128 0x6
+ 355 00b0 04       		.byte	0x4
+ 356 00b1 B5000000 		.4byte	0xb5
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 9
+
+
+ 357 00b5 07       		.uleb128 0x7
+ 358 00b6 9B000000 		.4byte	0x9b
+ 359 00ba 08       		.uleb128 0x8
+ 360 00bb 5A000000 		.4byte	.LASF18
+ 361 00bf 01       		.byte	0x1
+ 362 00c0 27       		.byte	0x27
+ 363 00c1 8D000000 		.4byte	0x8d
+ 364 00c5 00000000 		.4byte	.LFB64
+ 365 00c9 20000000 		.4byte	.LFE64-.LFB64
+ 366 00cd 01       		.uleb128 0x1
+ 367 00ce 9C       		.byte	0x9c
+ 368 00cf 01010000 		.4byte	0x101
+ 369 00d3 09       		.uleb128 0x9
+ 370 00d4 4C000000 		.4byte	.LASF16
+ 371 00d8 01       		.byte	0x1
+ 372 00d9 27       		.byte	0x27
+ 373 00da 8D000000 		.4byte	0x8d
+ 374 00de 00000000 		.4byte	.LLST0
+ 375 00e2 09       		.uleb128 0x9
+ 376 00e3 53000000 		.4byte	.LASF17
+ 377 00e7 01       		.byte	0x1
+ 378 00e8 27       		.byte	0x27
+ 379 00e9 8D000000 		.4byte	0x8d
+ 380 00ed 1E000000 		.4byte	.LLST1
+ 381 00f1 0A       		.uleb128 0xa
+ 382 00f2 0D000000 		.4byte	.LASF20
+ 383 00f6 01       		.byte	0x1
+ 384 00f7 2A       		.byte	0x2a
+ 385 00f8 8D000000 		.4byte	0x8d
+ 386 00fc 3C000000 		.4byte	.LLST2
+ 387 0100 00       		.byte	0
+ 388 0101 08       		.uleb128 0x8
+ 389 0102 9C000000 		.4byte	.LASF19
+ 390 0106 01       		.byte	0x1
+ 391 0107 13       		.byte	0x13
+ 392 0108 68000000 		.4byte	0x68
+ 393 010c 00000000 		.4byte	.LFB63
+ 394 0110 30000000 		.4byte	.LFE63-.LFB63
+ 395 0114 01       		.uleb128 0x1
+ 396 0115 9C       		.byte	0x9c
+ 397 0116 7F010000 		.4byte	0x17f
+ 398 011a 0B       		.uleb128 0xb
+ 399 011b 4C000000 		.4byte	.LASF16
+ 400 011f 01       		.byte	0x1
+ 401 0120 1A       		.byte	0x1a
+ 402 0121 8D000000 		.4byte	0x8d
+ 403 0125 04       		.byte	0x4
+ 404 0126 00404E45 		.4byte	0x454e4000
+ 405 012a 0B       		.uleb128 0xb
+ 406 012b 53000000 		.4byte	.LASF17
+ 407 012f 01       		.byte	0x1
+ 408 0130 1B       		.byte	0x1b
+ 409 0131 8D000000 		.4byte	0x8d
+ 410 0135 04       		.byte	0x4
+ 411 0136 00B00146 		.4byte	0x4601b000
+ 412 013a 0B       		.uleb128 0xb
+ 413 013b 88000000 		.4byte	.LASF21
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 10
+
+
+ 414 013f 01       		.byte	0x1
+ 415 0140 1C       		.byte	0x1c
+ 416 0141 8D000000 		.4byte	0x8d
+ 417 0145 04       		.byte	0x4
+ 418 0146 007EBB46 		.4byte	0x46bb7e00
+ 419 014a 0A       		.uleb128 0xa
+ 420 014b 39000000 		.4byte	.LASF22
+ 421 014f 01       		.byte	0x1
+ 422 0150 1D       		.byte	0x1d
+ 423 0151 8D000000 		.4byte	0x8d
+ 424 0155 5A000000 		.4byte	.LLST3
+ 425 0159 0C       		.uleb128 0xc
+ 426 015a 08000000 		.4byte	.LVL6
+ 427 015e 90020000 		.4byte	0x290
+ 428 0162 0C       		.uleb128 0xc
+ 429 0163 10000000 		.4byte	.LVL7
+ 430 0167 BA000000 		.4byte	0xba
+ 431 016b 0D       		.uleb128 0xd
+ 432 016c 1E000000 		.4byte	.LVL9
+ 433 0170 97020000 		.4byte	0x297
+ 434 0174 0E       		.uleb128 0xe
+ 435 0175 01       		.uleb128 0x1
+ 436 0176 50       		.byte	0x50
+ 437 0177 05       		.uleb128 0x5
+ 438 0178 03       		.byte	0x3
+ 439 0179 00000000 		.4byte	.LC0
+ 440 017d 00       		.byte	0
+ 441 017e 00       		.byte	0
+ 442 017f 0F       		.uleb128 0xf
+ 443 0180 70010000 		.4byte	.LASF23
+ 444 0184 01       		.byte	0x1
+ 445 0185 36       		.byte	0x36
+ 446 0186 68000000 		.4byte	0x68
+ 447 018a 00000000 		.4byte	.LFB65
+ 448 018e 2A000000 		.4byte	.LFE65-.LFB65
+ 449 0192 01       		.uleb128 0x1
+ 450 0193 9C       		.byte	0x9c
+ 451 0194 EF010000 		.4byte	0x1ef
+ 452 0198 09       		.uleb128 0x9
+ 453 0199 47000000 		.4byte	.LASF24
+ 454 019d 01       		.byte	0x1
+ 455 019e 36       		.byte	0x36
+ 456 019f 68000000 		.4byte	0x68
+ 457 01a3 7D000000 		.4byte	.LLST4
+ 458 01a7 10       		.uleb128 0x10
+ 459 01a8 70747200 		.ascii	"ptr\000"
+ 460 01ac 01       		.byte	0x1
+ 461 01ad 36       		.byte	0x36
+ 462 01ae A9000000 		.4byte	0xa9
+ 463 01b2 9E000000 		.4byte	.LLST5
+ 464 01b6 10       		.uleb128 0x10
+ 465 01b7 6C656E00 		.ascii	"len\000"
+ 466 01bb 01       		.byte	0x1
+ 467 01bc 36       		.byte	0x36
+ 468 01bd 68000000 		.4byte	0x68
+ 469 01c1 D2000000 		.4byte	.LLST6
+ 470 01c5 11       		.uleb128 0x11
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 11
+
+
+ 471 01c6 6E00     		.ascii	"n\000"
+ 472 01c8 01       		.byte	0x1
+ 473 01c9 39       		.byte	0x39
+ 474 01ca 68000000 		.4byte	0x68
+ 475 01ce F0000000 		.4byte	.LLST7
+ 476 01d2 12       		.uleb128 0x12
+ 477 01d3 16000000 		.4byte	.LVL13
+ 478 01d7 AD020000 		.4byte	0x2ad
+ 479 01db E5010000 		.4byte	0x1e5
+ 480 01df 0E       		.uleb128 0xe
+ 481 01e0 01       		.uleb128 0x1
+ 482 01e1 50       		.byte	0x50
+ 483 01e2 01       		.uleb128 0x1
+ 484 01e3 3D       		.byte	0x3d
+ 485 01e4 00       		.byte	0
+ 486 01e5 0C       		.uleb128 0xc
+ 487 01e6 1E000000 		.4byte	.LVL15
+ 488 01ea AD020000 		.4byte	0x2ad
+ 489 01ee 00       		.byte	0
+ 490 01ef 0F       		.uleb128 0xf
+ 491 01f0 62010000 		.4byte	.LASF25
+ 492 01f4 01       		.byte	0x1
+ 493 01f5 41       		.byte	0x41
+ 494 01f6 68000000 		.4byte	0x68
+ 495 01fa 00000000 		.4byte	.LFB66
+ 496 01fe 38000000 		.4byte	.LFE66-.LFB66
+ 497 0202 01       		.uleb128 0x1
+ 498 0203 9C       		.byte	0x9c
+ 499 0204 7F020000 		.4byte	0x27f
+ 500 0208 09       		.uleb128 0x9
+ 501 0209 47000000 		.4byte	.LASF24
+ 502 020d 01       		.byte	0x1
+ 503 020e 41       		.byte	0x41
+ 504 020f 68000000 		.4byte	0x68
+ 505 0213 0F010000 		.4byte	.LLST8
+ 506 0217 10       		.uleb128 0x10
+ 507 0218 70747200 		.ascii	"ptr\000"
+ 508 021c 01       		.byte	0x1
+ 509 021d 41       		.byte	0x41
+ 510 021e A9000000 		.4byte	0xa9
+ 511 0222 30010000 		.4byte	.LLST9
+ 512 0226 09       		.uleb128 0x9
+ 513 0227 F7010000 		.4byte	.LASF26
+ 514 022b 01       		.byte	0x1
+ 515 022c 41       		.byte	0x41
+ 516 022d 68000000 		.4byte	0x68
+ 517 0231 64010000 		.4byte	.LLST10
+ 518 0235 11       		.uleb128 0x11
+ 519 0236 63687300 		.ascii	"chs\000"
+ 520 023a 01       		.byte	0x1
+ 521 023b 43       		.byte	0x43
+ 522 023c 68000000 		.4byte	0x68
+ 523 0240 82010000 		.4byte	.LLST11
+ 524 0244 11       		.uleb128 0x11
+ 525 0245 636800   		.ascii	"ch\000"
+ 526 0248 01       		.byte	0x1
+ 527 0249 44       		.byte	0x44
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 12
+
+
+ 528 024a 9B000000 		.4byte	0x9b
+ 529 024e A1010000 		.4byte	.LLST12
+ 530 0252 0C       		.uleb128 0xc
+ 531 0253 0E000000 		.4byte	.LVL21
+ 532 0257 BE020000 		.4byte	0x2be
+ 533 025b 12       		.uleb128 0x12
+ 534 025c 16000000 		.4byte	.LVL22
+ 535 0260 AD020000 		.4byte	0x2ad
+ 536 0264 6F020000 		.4byte	0x26f
+ 537 0268 0E       		.uleb128 0xe
+ 538 0269 01       		.uleb128 0x1
+ 539 026a 50       		.byte	0x50
+ 540 026b 02       		.uleb128 0x2
+ 541 026c 75       		.byte	0x75
+ 542 026d 00       		.sleb128 0
+ 543 026e 00       		.byte	0
+ 544 026f 0D       		.uleb128 0xd
+ 545 0270 22000000 		.4byte	.LVL25
+ 546 0274 AD020000 		.4byte	0x2ad
+ 547 0278 0E       		.uleb128 0xe
+ 548 0279 01       		.uleb128 0x1
+ 549 027a 50       		.byte	0x50
+ 550 027b 01       		.uleb128 0x1
+ 551 027c 3A       		.byte	0x3a
+ 552 027d 00       		.byte	0
+ 553 027e 00       		.byte	0
+ 554 027f 13       		.uleb128 0x13
+ 555 0280 7B000000 		.4byte	.LASF30
+ 556 0284 05       		.byte	0x5
+ 557 0285 9606     		.2byte	0x696
+ 558 0287 8B020000 		.4byte	0x28b
+ 559 028b 14       		.uleb128 0x14
+ 560 028c 76000000 		.4byte	0x76
+ 561 0290 15       		.uleb128 0x15
+ 562 0291 00000000 		.4byte	.LASF31
+ 563 0295 06       		.byte	0x6
+ 564 0296 54       		.byte	0x54
+ 565 0297 16       		.uleb128 0x16
+ 566 0298 F0010000 		.4byte	.LASF32
+ 567 029c 07       		.byte	0x7
+ 568 029d B2       		.byte	0xb2
+ 569 029e 68000000 		.4byte	0x68
+ 570 02a2 AD020000 		.4byte	0x2ad
+ 571 02a6 17       		.uleb128 0x17
+ 572 02a7 AF000000 		.4byte	0xaf
+ 573 02ab 18       		.uleb128 0x18
+ 574 02ac 00       		.byte	0
+ 575 02ad 19       		.uleb128 0x19
+ 576 02ae 2F010000 		.4byte	.LASF33
+ 577 02b2 06       		.byte	0x6
+ 578 02b3 8A       		.byte	0x8a
+ 579 02b4 BE020000 		.4byte	0x2be
+ 580 02b8 17       		.uleb128 0x17
+ 581 02b9 81000000 		.4byte	0x81
+ 582 02bd 00       		.byte	0
+ 583 02be 1A       		.uleb128 0x1a
+ 584 02bf 22020000 		.4byte	.LASF34
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 13
+
+
+ 585 02c3 06       		.byte	0x6
+ 586 02c4 71       		.byte	0x71
+ 587 02c5 81000000 		.4byte	0x81
+ 588 02c9 00       		.byte	0
+ 589              		.section	.debug_abbrev,"",%progbits
+ 590              	.Ldebug_abbrev0:
+ 591 0000 01       		.uleb128 0x1
+ 592 0001 11       		.uleb128 0x11
+ 593 0002 01       		.byte	0x1
+ 594 0003 25       		.uleb128 0x25
+ 595 0004 0E       		.uleb128 0xe
+ 596 0005 13       		.uleb128 0x13
+ 597 0006 0B       		.uleb128 0xb
+ 598 0007 03       		.uleb128 0x3
+ 599 0008 0E       		.uleb128 0xe
+ 600 0009 1B       		.uleb128 0x1b
+ 601 000a 0E       		.uleb128 0xe
+ 602 000b 55       		.uleb128 0x55
+ 603 000c 17       		.uleb128 0x17
+ 604 000d 11       		.uleb128 0x11
+ 605 000e 01       		.uleb128 0x1
+ 606 000f 10       		.uleb128 0x10
+ 607 0010 17       		.uleb128 0x17
+ 608 0011 00       		.byte	0
+ 609 0012 00       		.byte	0
+ 610 0013 02       		.uleb128 0x2
+ 611 0014 24       		.uleb128 0x24
+ 612 0015 00       		.byte	0
+ 613 0016 0B       		.uleb128 0xb
+ 614 0017 0B       		.uleb128 0xb
+ 615 0018 3E       		.uleb128 0x3e
+ 616 0019 0B       		.uleb128 0xb
+ 617 001a 03       		.uleb128 0x3
+ 618 001b 0E       		.uleb128 0xe
+ 619 001c 00       		.byte	0
+ 620 001d 00       		.byte	0
+ 621 001e 03       		.uleb128 0x3
+ 622 001f 16       		.uleb128 0x16
+ 623 0020 00       		.byte	0
+ 624 0021 03       		.uleb128 0x3
+ 625 0022 0E       		.uleb128 0xe
+ 626 0023 3A       		.uleb128 0x3a
+ 627 0024 0B       		.uleb128 0xb
+ 628 0025 3B       		.uleb128 0x3b
+ 629 0026 0B       		.uleb128 0xb
+ 630 0027 49       		.uleb128 0x49
+ 631 0028 13       		.uleb128 0x13
+ 632 0029 00       		.byte	0
+ 633 002a 00       		.byte	0
+ 634 002b 04       		.uleb128 0x4
+ 635 002c 24       		.uleb128 0x24
+ 636 002d 00       		.byte	0
+ 637 002e 0B       		.uleb128 0xb
+ 638 002f 0B       		.uleb128 0xb
+ 639 0030 3E       		.uleb128 0x3e
+ 640 0031 0B       		.uleb128 0xb
+ 641 0032 03       		.uleb128 0x3
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 14
+
+
+ 642 0033 08       		.uleb128 0x8
+ 643 0034 00       		.byte	0
+ 644 0035 00       		.byte	0
+ 645 0036 05       		.uleb128 0x5
+ 646 0037 16       		.uleb128 0x16
+ 647 0038 00       		.byte	0
+ 648 0039 03       		.uleb128 0x3
+ 649 003a 0E       		.uleb128 0xe
+ 650 003b 3A       		.uleb128 0x3a
+ 651 003c 0B       		.uleb128 0xb
+ 652 003d 3B       		.uleb128 0x3b
+ 653 003e 05       		.uleb128 0x5
+ 654 003f 49       		.uleb128 0x49
+ 655 0040 13       		.uleb128 0x13
+ 656 0041 00       		.byte	0
+ 657 0042 00       		.byte	0
+ 658 0043 06       		.uleb128 0x6
+ 659 0044 0F       		.uleb128 0xf
+ 660 0045 00       		.byte	0
+ 661 0046 0B       		.uleb128 0xb
+ 662 0047 0B       		.uleb128 0xb
+ 663 0048 49       		.uleb128 0x49
+ 664 0049 13       		.uleb128 0x13
+ 665 004a 00       		.byte	0
+ 666 004b 00       		.byte	0
+ 667 004c 07       		.uleb128 0x7
+ 668 004d 26       		.uleb128 0x26
+ 669 004e 00       		.byte	0
+ 670 004f 49       		.uleb128 0x49
+ 671 0050 13       		.uleb128 0x13
+ 672 0051 00       		.byte	0
+ 673 0052 00       		.byte	0
+ 674 0053 08       		.uleb128 0x8
+ 675 0054 2E       		.uleb128 0x2e
+ 676 0055 01       		.byte	0x1
+ 677 0056 3F       		.uleb128 0x3f
+ 678 0057 19       		.uleb128 0x19
+ 679 0058 03       		.uleb128 0x3
+ 680 0059 0E       		.uleb128 0xe
+ 681 005a 3A       		.uleb128 0x3a
+ 682 005b 0B       		.uleb128 0xb
+ 683 005c 3B       		.uleb128 0x3b
+ 684 005d 0B       		.uleb128 0xb
+ 685 005e 27       		.uleb128 0x27
+ 686 005f 19       		.uleb128 0x19
+ 687 0060 49       		.uleb128 0x49
+ 688 0061 13       		.uleb128 0x13
+ 689 0062 11       		.uleb128 0x11
+ 690 0063 01       		.uleb128 0x1
+ 691 0064 12       		.uleb128 0x12
+ 692 0065 06       		.uleb128 0x6
+ 693 0066 40       		.uleb128 0x40
+ 694 0067 18       		.uleb128 0x18
+ 695 0068 9642     		.uleb128 0x2116
+ 696 006a 19       		.uleb128 0x19
+ 697 006b 01       		.uleb128 0x1
+ 698 006c 13       		.uleb128 0x13
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 15
+
+
+ 699 006d 00       		.byte	0
+ 700 006e 00       		.byte	0
+ 701 006f 09       		.uleb128 0x9
+ 702 0070 05       		.uleb128 0x5
+ 703 0071 00       		.byte	0
+ 704 0072 03       		.uleb128 0x3
+ 705 0073 0E       		.uleb128 0xe
+ 706 0074 3A       		.uleb128 0x3a
+ 707 0075 0B       		.uleb128 0xb
+ 708 0076 3B       		.uleb128 0x3b
+ 709 0077 0B       		.uleb128 0xb
+ 710 0078 49       		.uleb128 0x49
+ 711 0079 13       		.uleb128 0x13
+ 712 007a 02       		.uleb128 0x2
+ 713 007b 17       		.uleb128 0x17
+ 714 007c 00       		.byte	0
+ 715 007d 00       		.byte	0
+ 716 007e 0A       		.uleb128 0xa
+ 717 007f 34       		.uleb128 0x34
+ 718 0080 00       		.byte	0
+ 719 0081 03       		.uleb128 0x3
+ 720 0082 0E       		.uleb128 0xe
+ 721 0083 3A       		.uleb128 0x3a
+ 722 0084 0B       		.uleb128 0xb
+ 723 0085 3B       		.uleb128 0x3b
+ 724 0086 0B       		.uleb128 0xb
+ 725 0087 49       		.uleb128 0x49
+ 726 0088 13       		.uleb128 0x13
+ 727 0089 02       		.uleb128 0x2
+ 728 008a 17       		.uleb128 0x17
+ 729 008b 00       		.byte	0
+ 730 008c 00       		.byte	0
+ 731 008d 0B       		.uleb128 0xb
+ 732 008e 34       		.uleb128 0x34
+ 733 008f 00       		.byte	0
+ 734 0090 03       		.uleb128 0x3
+ 735 0091 0E       		.uleb128 0xe
+ 736 0092 3A       		.uleb128 0x3a
+ 737 0093 0B       		.uleb128 0xb
+ 738 0094 3B       		.uleb128 0x3b
+ 739 0095 0B       		.uleb128 0xb
+ 740 0096 49       		.uleb128 0x49
+ 741 0097 13       		.uleb128 0x13
+ 742 0098 1C       		.uleb128 0x1c
+ 743 0099 0A       		.uleb128 0xa
+ 744 009a 00       		.byte	0
+ 745 009b 00       		.byte	0
+ 746 009c 0C       		.uleb128 0xc
+ 747 009d 898201   		.uleb128 0x4109
+ 748 00a0 00       		.byte	0
+ 749 00a1 11       		.uleb128 0x11
+ 750 00a2 01       		.uleb128 0x1
+ 751 00a3 31       		.uleb128 0x31
+ 752 00a4 13       		.uleb128 0x13
+ 753 00a5 00       		.byte	0
+ 754 00a6 00       		.byte	0
+ 755 00a7 0D       		.uleb128 0xd
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 16
+
+
+ 756 00a8 898201   		.uleb128 0x4109
+ 757 00ab 01       		.byte	0x1
+ 758 00ac 11       		.uleb128 0x11
+ 759 00ad 01       		.uleb128 0x1
+ 760 00ae 31       		.uleb128 0x31
+ 761 00af 13       		.uleb128 0x13
+ 762 00b0 00       		.byte	0
+ 763 00b1 00       		.byte	0
+ 764 00b2 0E       		.uleb128 0xe
+ 765 00b3 8A8201   		.uleb128 0x410a
+ 766 00b6 00       		.byte	0
+ 767 00b7 02       		.uleb128 0x2
+ 768 00b8 18       		.uleb128 0x18
+ 769 00b9 9142     		.uleb128 0x2111
+ 770 00bb 18       		.uleb128 0x18
+ 771 00bc 00       		.byte	0
+ 772 00bd 00       		.byte	0
+ 773 00be 0F       		.uleb128 0xf
+ 774 00bf 2E       		.uleb128 0x2e
+ 775 00c0 01       		.byte	0x1
+ 776 00c1 3F       		.uleb128 0x3f
+ 777 00c2 19       		.uleb128 0x19
+ 778 00c3 03       		.uleb128 0x3
+ 779 00c4 0E       		.uleb128 0xe
+ 780 00c5 3A       		.uleb128 0x3a
+ 781 00c6 0B       		.uleb128 0xb
+ 782 00c7 3B       		.uleb128 0x3b
+ 783 00c8 0B       		.uleb128 0xb
+ 784 00c9 27       		.uleb128 0x27
+ 785 00ca 19       		.uleb128 0x19
+ 786 00cb 49       		.uleb128 0x49
+ 787 00cc 13       		.uleb128 0x13
+ 788 00cd 11       		.uleb128 0x11
+ 789 00ce 01       		.uleb128 0x1
+ 790 00cf 12       		.uleb128 0x12
+ 791 00d0 06       		.uleb128 0x6
+ 792 00d1 40       		.uleb128 0x40
+ 793 00d2 18       		.uleb128 0x18
+ 794 00d3 9742     		.uleb128 0x2117
+ 795 00d5 19       		.uleb128 0x19
+ 796 00d6 01       		.uleb128 0x1
+ 797 00d7 13       		.uleb128 0x13
+ 798 00d8 00       		.byte	0
+ 799 00d9 00       		.byte	0
+ 800 00da 10       		.uleb128 0x10
+ 801 00db 05       		.uleb128 0x5
+ 802 00dc 00       		.byte	0
+ 803 00dd 03       		.uleb128 0x3
+ 804 00de 08       		.uleb128 0x8
+ 805 00df 3A       		.uleb128 0x3a
+ 806 00e0 0B       		.uleb128 0xb
+ 807 00e1 3B       		.uleb128 0x3b
+ 808 00e2 0B       		.uleb128 0xb
+ 809 00e3 49       		.uleb128 0x49
+ 810 00e4 13       		.uleb128 0x13
+ 811 00e5 02       		.uleb128 0x2
+ 812 00e6 17       		.uleb128 0x17
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 17
+
+
+ 813 00e7 00       		.byte	0
+ 814 00e8 00       		.byte	0
+ 815 00e9 11       		.uleb128 0x11
+ 816 00ea 34       		.uleb128 0x34
+ 817 00eb 00       		.byte	0
+ 818 00ec 03       		.uleb128 0x3
+ 819 00ed 08       		.uleb128 0x8
+ 820 00ee 3A       		.uleb128 0x3a
+ 821 00ef 0B       		.uleb128 0xb
+ 822 00f0 3B       		.uleb128 0x3b
+ 823 00f1 0B       		.uleb128 0xb
+ 824 00f2 49       		.uleb128 0x49
+ 825 00f3 13       		.uleb128 0x13
+ 826 00f4 02       		.uleb128 0x2
+ 827 00f5 17       		.uleb128 0x17
+ 828 00f6 00       		.byte	0
+ 829 00f7 00       		.byte	0
+ 830 00f8 12       		.uleb128 0x12
+ 831 00f9 898201   		.uleb128 0x4109
+ 832 00fc 01       		.byte	0x1
+ 833 00fd 11       		.uleb128 0x11
+ 834 00fe 01       		.uleb128 0x1
+ 835 00ff 31       		.uleb128 0x31
+ 836 0100 13       		.uleb128 0x13
+ 837 0101 01       		.uleb128 0x1
+ 838 0102 13       		.uleb128 0x13
+ 839 0103 00       		.byte	0
+ 840 0104 00       		.byte	0
+ 841 0105 13       		.uleb128 0x13
+ 842 0106 34       		.uleb128 0x34
+ 843 0107 00       		.byte	0
+ 844 0108 03       		.uleb128 0x3
+ 845 0109 0E       		.uleb128 0xe
+ 846 010a 3A       		.uleb128 0x3a
+ 847 010b 0B       		.uleb128 0xb
+ 848 010c 3B       		.uleb128 0x3b
+ 849 010d 05       		.uleb128 0x5
+ 850 010e 49       		.uleb128 0x49
+ 851 010f 13       		.uleb128 0x13
+ 852 0110 3F       		.uleb128 0x3f
+ 853 0111 19       		.uleb128 0x19
+ 854 0112 3C       		.uleb128 0x3c
+ 855 0113 19       		.uleb128 0x19
+ 856 0114 00       		.byte	0
+ 857 0115 00       		.byte	0
+ 858 0116 14       		.uleb128 0x14
+ 859 0117 35       		.uleb128 0x35
+ 860 0118 00       		.byte	0
+ 861 0119 49       		.uleb128 0x49
+ 862 011a 13       		.uleb128 0x13
+ 863 011b 00       		.byte	0
+ 864 011c 00       		.byte	0
+ 865 011d 15       		.uleb128 0x15
+ 866 011e 2E       		.uleb128 0x2e
+ 867 011f 00       		.byte	0
+ 868 0120 3F       		.uleb128 0x3f
+ 869 0121 19       		.uleb128 0x19
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 18
+
+
+ 870 0122 03       		.uleb128 0x3
+ 871 0123 0E       		.uleb128 0xe
+ 872 0124 3A       		.uleb128 0x3a
+ 873 0125 0B       		.uleb128 0xb
+ 874 0126 3B       		.uleb128 0x3b
+ 875 0127 0B       		.uleb128 0xb
+ 876 0128 27       		.uleb128 0x27
+ 877 0129 19       		.uleb128 0x19
+ 878 012a 3C       		.uleb128 0x3c
+ 879 012b 19       		.uleb128 0x19
+ 880 012c 00       		.byte	0
+ 881 012d 00       		.byte	0
+ 882 012e 16       		.uleb128 0x16
+ 883 012f 2E       		.uleb128 0x2e
+ 884 0130 01       		.byte	0x1
+ 885 0131 3F       		.uleb128 0x3f
+ 886 0132 19       		.uleb128 0x19
+ 887 0133 03       		.uleb128 0x3
+ 888 0134 0E       		.uleb128 0xe
+ 889 0135 3A       		.uleb128 0x3a
+ 890 0136 0B       		.uleb128 0xb
+ 891 0137 3B       		.uleb128 0x3b
+ 892 0138 0B       		.uleb128 0xb
+ 893 0139 27       		.uleb128 0x27
+ 894 013a 19       		.uleb128 0x19
+ 895 013b 49       		.uleb128 0x49
+ 896 013c 13       		.uleb128 0x13
+ 897 013d 3C       		.uleb128 0x3c
+ 898 013e 19       		.uleb128 0x19
+ 899 013f 01       		.uleb128 0x1
+ 900 0140 13       		.uleb128 0x13
+ 901 0141 00       		.byte	0
+ 902 0142 00       		.byte	0
+ 903 0143 17       		.uleb128 0x17
+ 904 0144 05       		.uleb128 0x5
+ 905 0145 00       		.byte	0
+ 906 0146 49       		.uleb128 0x49
+ 907 0147 13       		.uleb128 0x13
+ 908 0148 00       		.byte	0
+ 909 0149 00       		.byte	0
+ 910 014a 18       		.uleb128 0x18
+ 911 014b 18       		.uleb128 0x18
+ 912 014c 00       		.byte	0
+ 913 014d 00       		.byte	0
+ 914 014e 00       		.byte	0
+ 915 014f 19       		.uleb128 0x19
+ 916 0150 2E       		.uleb128 0x2e
+ 917 0151 01       		.byte	0x1
+ 918 0152 3F       		.uleb128 0x3f
+ 919 0153 19       		.uleb128 0x19
+ 920 0154 03       		.uleb128 0x3
+ 921 0155 0E       		.uleb128 0xe
+ 922 0156 3A       		.uleb128 0x3a
+ 923 0157 0B       		.uleb128 0xb
+ 924 0158 3B       		.uleb128 0x3b
+ 925 0159 0B       		.uleb128 0xb
+ 926 015a 27       		.uleb128 0x27
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 19
+
+
+ 927 015b 19       		.uleb128 0x19
+ 928 015c 3C       		.uleb128 0x3c
+ 929 015d 19       		.uleb128 0x19
+ 930 015e 01       		.uleb128 0x1
+ 931 015f 13       		.uleb128 0x13
+ 932 0160 00       		.byte	0
+ 933 0161 00       		.byte	0
+ 934 0162 1A       		.uleb128 0x1a
+ 935 0163 2E       		.uleb128 0x2e
+ 936 0164 00       		.byte	0
+ 937 0165 3F       		.uleb128 0x3f
+ 938 0166 19       		.uleb128 0x19
+ 939 0167 03       		.uleb128 0x3
+ 940 0168 0E       		.uleb128 0xe
+ 941 0169 3A       		.uleb128 0x3a
+ 942 016a 0B       		.uleb128 0xb
+ 943 016b 3B       		.uleb128 0x3b
+ 944 016c 0B       		.uleb128 0xb
+ 945 016d 27       		.uleb128 0x27
+ 946 016e 19       		.uleb128 0x19
+ 947 016f 49       		.uleb128 0x49
+ 948 0170 13       		.uleb128 0x13
+ 949 0171 3C       		.uleb128 0x3c
+ 950 0172 19       		.uleb128 0x19
+ 951 0173 00       		.byte	0
+ 952 0174 00       		.byte	0
+ 953 0175 00       		.byte	0
+ 954              		.section	.debug_loc,"",%progbits
+ 955              	.Ldebug_loc0:
+ 956              	.LLST0:
+ 957 0000 00000000 		.4byte	.LVL0
+ 958 0004 06000000 		.4byte	.LVL1
+ 959 0008 0100     		.2byte	0x1
+ 960 000a 50       		.byte	0x50
+ 961 000b 06000000 		.4byte	.LVL1
+ 962 000f 20000000 		.4byte	.LFE64
+ 963 0013 0100     		.2byte	0x1
+ 964 0015 55       		.byte	0x55
+ 965 0016 00000000 		.4byte	0
+ 966 001a 00000000 		.4byte	0
+ 967              	.LLST1:
+ 968 001e 00000000 		.4byte	.LVL0
+ 969 0022 06000000 		.4byte	.LVL1
+ 970 0026 0100     		.2byte	0x1
+ 971 0028 51       		.byte	0x51
+ 972 0029 06000000 		.4byte	.LVL1
+ 973 002d 20000000 		.4byte	.LFE64
+ 974 0031 0100     		.2byte	0x1
+ 975 0033 54       		.byte	0x54
+ 976 0034 00000000 		.4byte	0
+ 977 0038 00000000 		.4byte	0
+ 978              	.LLST2:
+ 979 003c 10000000 		.4byte	.LVL3
+ 980 0040 12000000 		.4byte	.LVL4
+ 981 0044 0100     		.2byte	0x1
+ 982 0046 50       		.byte	0x50
+ 983 0047 12000000 		.4byte	.LVL4
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 20
+
+
+ 984 004b 20000000 		.4byte	.LFE64
+ 985 004f 0100     		.2byte	0x1
+ 986 0051 56       		.byte	0x56
+ 987 0052 00000000 		.4byte	0
+ 988 0056 00000000 		.4byte	0
+ 989              	.LLST3:
+ 990 005a 08000000 		.4byte	.LVL6
+ 991 005e 10000000 		.4byte	.LVL7
+ 992 0062 0600     		.2byte	0x6
+ 993 0064 9E       		.byte	0x9e
+ 994 0065 04       		.uleb128 0x4
+ 995 0066 00000000 		.4byte	0
+ 996 006a 10000000 		.4byte	.LVL7
+ 997 006e 13000000 		.4byte	.LVL8-1
+ 998 0072 0100     		.2byte	0x1
+ 999 0074 50       		.byte	0x50
+ 1000 0075 00000000 		.4byte	0
+ 1001 0079 00000000 		.4byte	0
+ 1002              	.LLST4:
+ 1003 007d 00000000 		.4byte	.LVL10
+ 1004 0081 0A000000 		.4byte	.LVL12
+ 1005 0085 0100     		.2byte	0x1
+ 1006 0087 50       		.byte	0x50
+ 1007 0088 0A000000 		.4byte	.LVL12
+ 1008 008c 2A000000 		.4byte	.LFE65
+ 1009 0090 0400     		.2byte	0x4
+ 1010 0092 F3       		.byte	0xf3
+ 1011 0093 01       		.uleb128 0x1
+ 1012 0094 50       		.byte	0x50
+ 1013 0095 9F       		.byte	0x9f
+ 1014 0096 00000000 		.4byte	0
+ 1015 009a 00000000 		.4byte	0
+ 1016              	.LLST5:
+ 1017 009e 00000000 		.4byte	.LVL10
+ 1018 00a2 0A000000 		.4byte	.LVL12
+ 1019 00a6 0100     		.2byte	0x1
+ 1020 00a8 51       		.byte	0x51
+ 1021 00a9 0A000000 		.4byte	.LVL12
+ 1022 00ad 18000000 		.4byte	.LVL14
+ 1023 00b1 0100     		.2byte	0x1
+ 1024 00b3 54       		.byte	0x54
+ 1025 00b4 18000000 		.4byte	.LVL14
+ 1026 00b8 22000000 		.4byte	.LVL17
+ 1027 00bc 0100     		.2byte	0x1
+ 1028 00be 56       		.byte	0x56
+ 1029 00bf 22000000 		.4byte	.LVL17
+ 1030 00c3 2A000000 		.4byte	.LFE65
+ 1031 00c7 0100     		.2byte	0x1
+ 1032 00c9 54       		.byte	0x54
+ 1033 00ca 00000000 		.4byte	0
+ 1034 00ce 00000000 		.4byte	0
+ 1035              	.LLST6:
+ 1036 00d2 00000000 		.4byte	.LVL10
+ 1037 00d6 0A000000 		.4byte	.LVL12
+ 1038 00da 0100     		.2byte	0x1
+ 1039 00dc 52       		.byte	0x52
+ 1040 00dd 0A000000 		.4byte	.LVL12
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 21
+
+
+ 1041 00e1 2A000000 		.4byte	.LFE65
+ 1042 00e5 0100     		.2byte	0x1
+ 1043 00e7 57       		.byte	0x57
+ 1044 00e8 00000000 		.4byte	0
+ 1045 00ec 00000000 		.4byte	0
+ 1046              	.LLST7:
+ 1047 00f0 06000000 		.4byte	.LVL11
+ 1048 00f4 0A000000 		.4byte	.LVL12
+ 1049 00f8 0200     		.2byte	0x2
+ 1050 00fa 30       		.byte	0x30
+ 1051 00fb 9F       		.byte	0x9f
+ 1052 00fc 0A000000 		.4byte	.LVL12
+ 1053 0100 2A000000 		.4byte	.LFE65
+ 1054 0104 0100     		.2byte	0x1
+ 1055 0106 55       		.byte	0x55
+ 1056 0107 00000000 		.4byte	0
+ 1057 010b 00000000 		.4byte	0
+ 1058              	.LLST8:
+ 1059 010f 00000000 		.4byte	.LVL18
+ 1060 0113 0A000000 		.4byte	.LVL20
+ 1061 0117 0100     		.2byte	0x1
+ 1062 0119 50       		.byte	0x50
+ 1063 011a 0A000000 		.4byte	.LVL20
+ 1064 011e 38000000 		.4byte	.LFE66
+ 1065 0122 0400     		.2byte	0x4
+ 1066 0124 F3       		.byte	0xf3
+ 1067 0125 01       		.uleb128 0x1
+ 1068 0126 50       		.byte	0x50
+ 1069 0127 9F       		.byte	0x9f
+ 1070 0128 00000000 		.4byte	0
+ 1071 012c 00000000 		.4byte	0
+ 1072              	.LLST9:
+ 1073 0130 00000000 		.4byte	.LVL18
+ 1074 0134 0A000000 		.4byte	.LVL20
+ 1075 0138 0100     		.2byte	0x1
+ 1076 013a 51       		.byte	0x51
+ 1077 013b 0A000000 		.4byte	.LVL20
+ 1078 013f 26000000 		.4byte	.LVL27
+ 1079 0143 0100     		.2byte	0x1
+ 1080 0145 57       		.byte	0x57
+ 1081 0146 26000000 		.4byte	.LVL27
+ 1082 014a 30000000 		.4byte	.LVL29
+ 1083 014e 0100     		.2byte	0x1
+ 1084 0150 53       		.byte	0x53
+ 1085 0151 30000000 		.4byte	.LVL29
+ 1086 0155 34000000 		.4byte	.LVL30
+ 1087 0159 0100     		.2byte	0x1
+ 1088 015b 57       		.byte	0x57
+ 1089 015c 00000000 		.4byte	0
+ 1090 0160 00000000 		.4byte	0
+ 1091              	.LLST10:
+ 1092 0164 00000000 		.4byte	.LVL18
+ 1093 0168 0A000000 		.4byte	.LVL20
+ 1094 016c 0100     		.2byte	0x1
+ 1095 016e 52       		.byte	0x52
+ 1096 016f 0A000000 		.4byte	.LVL20
+ 1097 0173 38000000 		.4byte	.LFE66
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 22
+
+
+ 1098 0177 0100     		.2byte	0x1
+ 1099 0179 54       		.byte	0x54
+ 1100 017a 00000000 		.4byte	0
+ 1101 017e 00000000 		.4byte	0
+ 1102              	.LLST11:
+ 1103 0182 06000000 		.4byte	.LVL19
+ 1104 0186 0A000000 		.4byte	.LVL20
+ 1105 018a 0200     		.2byte	0x2
+ 1106 018c 30       		.byte	0x30
+ 1107 018d 9F       		.byte	0x9f
+ 1108 018e 0A000000 		.4byte	.LVL20
+ 1109 0192 38000000 		.4byte	.LFE66
+ 1110 0196 0100     		.2byte	0x1
+ 1111 0198 56       		.byte	0x56
+ 1112 0199 00000000 		.4byte	0
+ 1113 019d 00000000 		.4byte	0
+ 1114              	.LLST12:
+ 1115 01a1 0E000000 		.4byte	.LVL21
+ 1116 01a5 15000000 		.4byte	.LVL22-1
+ 1117 01a9 0100     		.2byte	0x1
+ 1118 01ab 50       		.byte	0x50
+ 1119 01ac 1C000000 		.4byte	.LVL24
+ 1120 01b0 24000000 		.4byte	.LVL26
+ 1121 01b4 0200     		.2byte	0x2
+ 1122 01b6 3A       		.byte	0x3a
+ 1123 01b7 9F       		.byte	0x9f
+ 1124 01b8 24000000 		.4byte	.LVL26
+ 1125 01bc 30000000 		.4byte	.LVL29
+ 1126 01c0 0100     		.2byte	0x1
+ 1127 01c2 55       		.byte	0x55
+ 1128 01c3 00000000 		.4byte	0
+ 1129 01c7 00000000 		.4byte	0
+ 1130              		.section	.debug_aranges,"",%progbits
+ 1131 0000 34000000 		.4byte	0x34
+ 1132 0004 0200     		.2byte	0x2
+ 1133 0006 00000000 		.4byte	.Ldebug_info0
+ 1134 000a 04       		.byte	0x4
+ 1135 000b 00       		.byte	0
+ 1136 000c 0000     		.2byte	0
+ 1137 000e 0000     		.2byte	0
+ 1138 0010 00000000 		.4byte	.LFB64
+ 1139 0014 20000000 		.4byte	.LFE64-.LFB64
+ 1140 0018 00000000 		.4byte	.LFB63
+ 1141 001c 30000000 		.4byte	.LFE63-.LFB63
+ 1142 0020 00000000 		.4byte	.LFB65
+ 1143 0024 2A000000 		.4byte	.LFE65-.LFB65
+ 1144 0028 00000000 		.4byte	.LFB66
+ 1145 002c 38000000 		.4byte	.LFE66-.LFB66
+ 1146 0030 00000000 		.4byte	0
+ 1147 0034 00000000 		.4byte	0
+ 1148              		.section	.debug_ranges,"",%progbits
+ 1149              	.Ldebug_ranges0:
+ 1150 0000 00000000 		.4byte	.LFB64
+ 1151 0004 20000000 		.4byte	.LFE64
+ 1152 0008 00000000 		.4byte	.LFB63
+ 1153 000c 30000000 		.4byte	.LFE63
+ 1154 0010 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 23
+
+
+ 1155 0014 2A000000 		.4byte	.LFE65
+ 1156 0018 00000000 		.4byte	.LFB66
+ 1157 001c 38000000 		.4byte	.LFE66
+ 1158 0020 00000000 		.4byte	0
+ 1159 0024 00000000 		.4byte	0
+ 1160              		.section	.debug_line,"",%progbits
+ 1161              	.Ldebug_line0:
+ 1162 0000 E2010000 		.section	.debug_str,"MS",%progbits,1
+ 1162      02005E01 
+ 1162      00000201 
+ 1162      FB0E0D00 
+ 1162      01010101 
+ 1163              	.LASF31:
+ 1164 0000 55415254 		.ascii	"UART_1_Start\000"
+ 1164      5F315F53 
+ 1164      74617274 
+ 1164      00
+ 1165              	.LASF20:
+ 1166 000d 72657375 		.ascii	"result1\000"
+ 1166      6C743100 
+ 1167              	.LASF9:
+ 1168 0015 5F5F696E 		.ascii	"__int32_t\000"
+ 1168      7433325F 
+ 1168      7400
+ 1169              	.LASF3:
+ 1170 001f 73686F72 		.ascii	"short unsigned int\000"
+ 1170      7420756E 
+ 1170      7369676E 
+ 1170      65642069 
+ 1170      6E7400
+ 1171              	.LASF13:
+ 1172 0032 646F7562 		.ascii	"double\000"
+ 1172      6C6500
+ 1173              	.LASF22:
+ 1174 0039 72656164 		.ascii	"reading\000"
+ 1174      696E6700 
+ 1175              	.LASF12:
+ 1176 0041 666C6F61 		.ascii	"float\000"
+ 1176      7400
+ 1177              	.LASF24:
+ 1178 0047 66696C65 		.ascii	"file\000"
+ 1178      00
+ 1179              	.LASF16:
+ 1180 004c 77686974 		.ascii	"white1\000"
+ 1180      653100
+ 1181              	.LASF17:
+ 1182 0053 77686974 		.ascii	"white2\000"
+ 1182      653200
+ 1183              	.LASF18:
+ 1184 005a 63616C69 		.ascii	"calibrateWhite\000"
+ 1184      62726174 
+ 1184      65576869 
+ 1184      746500
+ 1185              	.LASF5:
+ 1186 0069 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1186      20756E73 
+ 1186      69676E65 
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 24
+
+
+ 1186      6420696E 
+ 1186      7400
+ 1187              	.LASF30:
+ 1188 007b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1188      52784275 
+ 1188      66666572 
+ 1188      00
+ 1189              	.LASF21:
+ 1190 0088 626C6163 		.ascii	"black\000"
+ 1190      6B00
+ 1191              	.LASF1:
+ 1192 008e 756E7369 		.ascii	"unsigned char\000"
+ 1192      676E6564 
+ 1192      20636861 
+ 1192      7200
+ 1193              	.LASF19:
+ 1194 009c 6D61696E 		.ascii	"main\000"
+ 1194      00
+ 1195              	.LASF27:
+ 1196 00a1 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1196      4320342E 
+ 1196      392E3320 
+ 1196      32303135 
+ 1196      30333033 
+ 1197 00d4 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1197      20726576 
+ 1197      6973696F 
+ 1197      6E203232 
+ 1197      31323230 
+ 1198 0107 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1198      66756E63 
+ 1198      74696F6E 
+ 1198      2D736563 
+ 1198      74696F6E 
+ 1199              	.LASF33:
+ 1200 012f 55415254 		.ascii	"UART_1_PutChar\000"
+ 1200      5F315F50 
+ 1200      75744368 
+ 1200      617200
+ 1201              	.LASF8:
+ 1202 013e 756E7369 		.ascii	"unsigned int\000"
+ 1202      676E6564 
+ 1202      20696E74 
+ 1202      00
+ 1203              	.LASF7:
+ 1204 014b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1204      206C6F6E 
+ 1204      6720756E 
+ 1204      7369676E 
+ 1204      65642069 
+ 1205              	.LASF25:
+ 1206 0162 5F726561 		.ascii	"_read\000"
+ 1206      6400
+ 1207              	.LASF10:
+ 1208 0168 696E7433 		.ascii	"int32_t\000"
+ 1208      325F7400 
+ 1209              	.LASF23:
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccR6vfkA.s 			page 25
+
+
+ 1210 0170 5F777269 		.ascii	"_write\000"
+ 1210      746500
+ 1211              	.LASF15:
+ 1212 0177 73697A65 		.ascii	"sizetype\000"
+ 1212      74797065 
+ 1212      00
+ 1213              	.LASF6:
+ 1214 0180 6C6F6E67 		.ascii	"long long int\000"
+ 1214      206C6F6E 
+ 1214      6720696E 
+ 1214      7400
+ 1215              	.LASF28:
+ 1216 018e 6D61696E 		.ascii	"main.c\000"
+ 1216      2E6300
+ 1217              	.LASF14:
+ 1218 0195 63686172 		.ascii	"char\000"
+ 1218      00
+ 1219              	.LASF29:
+ 1220 019a 433A5C55 		.ascii	"C:\\Users\\vellu\\OneDrive\\Tiedostot\\PSoC Creator"
+ 1220      73657273 
+ 1220      5C76656C 
+ 1220      6C755C4F 
+ 1220      6E654472 
+ 1221 01c8 5C4B6F75 		.ascii	"\\KouluOhjelmointi\\ZumoCalibration.cydsn\000"
+ 1221      6C754F68 
+ 1221      6A656C6D 
+ 1221      6F696E74 
+ 1221      695C5A75 
+ 1222              	.LASF32:
+ 1223 01f0 7072696E 		.ascii	"printf\000"
+ 1223      746600
+ 1224              	.LASF26:
+ 1225 01f7 636F756E 		.ascii	"count\000"
+ 1225      7400
+ 1226              	.LASF2:
+ 1227 01fd 73686F72 		.ascii	"short int\000"
+ 1227      7420696E 
+ 1227      7400
+ 1228              	.LASF11:
+ 1229 0207 75696E74 		.ascii	"uint8\000"
+ 1229      3800
+ 1230              	.LASF4:
+ 1231 020d 6C6F6E67 		.ascii	"long int\000"
+ 1231      20696E74 
+ 1231      00
+ 1232              	.LASF0:
+ 1233 0216 7369676E 		.ascii	"signed char\000"
+ 1233      65642063 
+ 1233      68617200 
+ 1234              	.LASF34:
+ 1235 0222 55415254 		.ascii	"UART_1_GetChar\000"
+ 1235      5F315F47 
+ 1235      65744368 
+ 1235      617200
+ 1236              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

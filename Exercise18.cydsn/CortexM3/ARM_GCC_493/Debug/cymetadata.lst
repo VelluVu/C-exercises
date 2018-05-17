@@ -1,0 +1,1280 @@
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_metadata
+  19              		.global	cy_meta_flashprotect
+  20              		.global	cy_meta_wonvl
+  21              		.global	cy_meta_custnvl
+  22              		.global	cy_meta_configecc
+  23              		.section	.cyconfigecc,"a",%progbits
+  24              		.align	2
+  25              		.type	cy_meta_configecc, %object
+  26              		.size	cy_meta_configecc, 744
+  27              	cy_meta_configecc:
+  28 0000 02       		.byte	2
+  29 0001 52       		.byte	82
+  30 0002 00       		.byte	0
+  31 0003 40       		.byte	64
+  32 0004 03       		.byte	3
+  33 0005 65       		.byte	101
+  34 0006 00       		.byte	0
+  35 0007 40       		.byte	64
+  36 0008 14       		.byte	20
+  37 0009 18       		.byte	24
+  38 000a 01       		.byte	1
+  39 000b 40       		.byte	64
+  40 000c 39       		.byte	57
+  41 000d 19       		.byte	25
+  42 000e 01       		.byte	1
+  43 000f 40       		.byte	64
+  44 0010 69       		.byte	105
+  45 0011 1A       		.byte	26
+  46 0012 01       		.byte	1
+  47 0013 40       		.byte	64
+  48 0014 52       		.byte	82
+  49 0015 1B       		.byte	27
+  50 0016 01       		.byte	1
+  51 0017 40       		.byte	64
+  52 0018 01       		.byte	1
+  53 0019 4C       		.byte	76
+  54 001a 01       		.byte	1
+  55 001b 40       		.byte	64
+  56 001c 07       		.byte	7
+  57 001d 4D       		.byte	77
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 2
+
+
+  58 001e 01       		.byte	1
+  59 001f 40       		.byte	64
+  60 0020 02       		.byte	2
+  61 0021 50       		.byte	80
+  62 0022 01       		.byte	1
+  63 0023 40       		.byte	64
+  64 0024 61       		.byte	97
+  65 0025 80       		.byte	-128
+  66 0026 64       		.byte	100
+  67 0027 40       		.byte	64
+  68 0028 88       		.byte	-120
+  69 0029 72       		.byte	114
+  70 002a 89       		.byte	-119
+  71 002b 38       		.byte	56
+  72 002c 8B       		.byte	-117
+  73 002d 0F       		.byte	15
+  74 002e 80       		.byte	-128
+  75 002f 08       		.byte	8
+  76 0030 86       		.byte	-122
+  77 0031 04       		.byte	4
+  78 0032 8A       		.byte	-118
+  79 0033 02       		.byte	2
+  80 0034 96       		.byte	-106
+  81 0035 02       		.byte	2
+  82 0036 A1       		.byte	-95
+  83 0037 01       		.byte	1
+  84 0038 A4       		.byte	-92
+  85 0039 01       		.byte	1
+  86 003a A8       		.byte	-88
+  87 003b 01       		.byte	1
+  88 003c AC       		.byte	-84
+  89 003d 01       		.byte	1
+  90 003e B0       		.byte	-80
+  91 003f 02       		.byte	2
+  92 0040 B2       		.byte	-78
+  93 0041 04       		.byte	4
+  94 0042 B4       		.byte	-76
+  95 0043 01       		.byte	1
+  96 0044 B5       		.byte	-75
+  97 0045 01       		.byte	1
+  98 0046 B6       		.byte	-74
+  99 0047 08       		.byte	8
+ 100 0048 BE       		.byte	-66
+ 101 0049 41       		.byte	65
+ 102 004a BF       		.byte	-65
+ 103 004b 10       		.byte	16
+ 104 004c D4       		.byte	-44
+ 105 004d 18       		.byte	24
+ 106 004e D8       		.byte	-40
+ 107 004f 04       		.byte	4
+ 108 0050 D9       		.byte	-39
+ 109 0051 04       		.byte	4
+ 110 0052 DB       		.byte	-37
+ 111 0053 04       		.byte	4
+ 112 0054 DF       		.byte	-33
+ 113 0055 01       		.byte	1
+ 114 0056 00       		.byte	0
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 3
+
+
+ 115 0057 10       		.byte	16
+ 116 0058 01       		.byte	1
+ 117 0059 0A       		.byte	10
+ 118 005a 05       		.byte	5
+ 119 005b 49       		.byte	73
+ 120 005c 06       		.byte	6
+ 121 005d 04       		.byte	4
+ 122 005e 0A       		.byte	10
+ 123 005f 20       		.byte	32
+ 124 0060 0C       		.byte	12
+ 125 0061 41       		.byte	65
+ 126 0062 0D       		.byte	13
+ 127 0063 02       		.byte	2
+ 128 0064 0E       		.byte	14
+ 129 0065 0A       		.byte	10
+ 130 0066 0F       		.byte	15
+ 131 0067 20       		.byte	32
+ 132 0068 10       		.byte	16
+ 133 0069 2A       		.byte	42
+ 134 006a 16       		.byte	22
+ 135 006b 82       		.byte	-126
+ 136 006c 17       		.byte	23
+ 137 006d 20       		.byte	32
+ 138 006e 19       		.byte	25
+ 139 006f 10       		.byte	16
+ 140 0070 1A       		.byte	26
+ 141 0071 01       		.byte	1
+ 142 0072 1B       		.byte	27
+ 143 0073 15       		.byte	21
+ 144 0074 1D       		.byte	29
+ 145 0075 21       		.byte	33
+ 146 0076 1E       		.byte	30
+ 147 0077 1A       		.byte	26
+ 148 0078 23       		.byte	35
+ 149 0079 08       		.byte	8
+ 150 007a 24       		.byte	36
+ 151 007b 10       		.byte	16
+ 152 007c 25       		.byte	37
+ 153 007d 0A       		.byte	10
+ 154 007e 27       		.byte	39
+ 155 007f 01       		.byte	1
+ 156 0080 2B       		.byte	43
+ 157 0081 40       		.byte	64
+ 158 0082 2C       		.byte	44
+ 159 0083 45       		.byte	69
+ 160 0084 2D       		.byte	45
+ 161 0085 08       		.byte	8
+ 162 0086 35       		.byte	53
+ 163 0087 51       		.byte	81
+ 164 0088 37       		.byte	55
+ 165 0089 04       		.byte	4
+ 166 008a 3D       		.byte	61
+ 167 008b 80       		.byte	-128
+ 168 008c 3E       		.byte	62
+ 169 008d A2       		.byte	-94
+ 170 008e 3F       		.byte	63
+ 171 008f 08       		.byte	8
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 4
+
+
+ 172 0090 44       		.byte	68
+ 173 0091 44       		.byte	68
+ 174 0092 45       		.byte	69
+ 175 0093 28       		.byte	40
+ 176 0094 47       		.byte	71
+ 177 0095 40       		.byte	64
+ 178 0096 4E       		.byte	78
+ 179 0097 10       		.byte	16
+ 180 0098 4F       		.byte	79
+ 181 0099 20       		.byte	32
+ 182 009a 55       		.byte	85
+ 183 009b 01       		.byte	1
+ 184 009c 5B       		.byte	91
+ 185 009d 01       		.byte	1
+ 186 009e 5E       		.byte	94
+ 187 009f 10       		.byte	16
+ 188 00a0 60       		.byte	96
+ 189 00a1 04       		.byte	4
+ 190 00a2 63       		.byte	99
+ 191 00a3 02       		.byte	2
+ 192 00a4 6C       		.byte	108
+ 193 00a5 2A       		.byte	42
+ 194 00a6 6E       		.byte	110
+ 195 00a7 04       		.byte	4
+ 196 00a8 6F       		.byte	111
+ 197 00a9 08       		.byte	8
+ 198 00aa 75       		.byte	117
+ 199 00ab 40       		.byte	64
+ 200 00ac 76       		.byte	118
+ 201 00ad 24       		.byte	36
+ 202 00ae 77       		.byte	119
+ 203 00af 24       		.byte	36
+ 204 00b0 86       		.byte	-122
+ 205 00b1 01       		.byte	1
+ 206 00b2 C0       		.byte	-64
+ 207 00b3 FE       		.byte	-2
+ 208 00b4 C2       		.byte	-62
+ 209 00b5 F4       		.byte	-12
+ 210 00b6 C4       		.byte	-60
+ 211 00b7 D7       		.byte	-41
+ 212 00b8 CA       		.byte	-54
+ 213 00b9 F1       		.byte	-15
+ 214 00ba CC       		.byte	-52
+ 215 00bb F0       		.byte	-16
+ 216 00bc CE       		.byte	-50
+ 217 00bd F0       		.byte	-16
+ 218 00be D0       		.byte	-48
+ 219 00bf F0       		.byte	-16
+ 220 00c0 D2       		.byte	-46
+ 221 00c1 20       		.byte	32
+ 222 00c2 D6       		.byte	-42
+ 223 00c3 21       		.byte	33
+ 224 00c4 D8       		.byte	-40
+ 225 00c5 0C       		.byte	12
+ 226 00c6 E0       		.byte	-32
+ 227 00c7 08       		.byte	8
+ 228 00c8 02       		.byte	2
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 5
+
+
+ 229 00c9 03       		.byte	3
+ 230 00ca 04       		.byte	4
+ 231 00cb 10       		.byte	16
+ 232 00cc 06       		.byte	6
+ 233 00cd 0C       		.byte	12
+ 234 00ce 07       		.byte	7
+ 235 00cf 08       		.byte	8
+ 236 00d0 08       		.byte	8
+ 237 00d1 10       		.byte	16
+ 238 00d2 0C       		.byte	12
+ 239 00d3 09       		.byte	9
+ 240 00d4 0D       		.byte	13
+ 241 00d5 80       		.byte	-128
+ 242 00d6 0E       		.byte	14
+ 243 00d7 10       		.byte	16
+ 244 00d8 0F       		.byte	15
+ 245 00d9 13       		.byte	19
+ 246 00da 12       		.byte	18
+ 247 00db 20       		.byte	32
+ 248 00dc 15       		.byte	21
+ 249 00dd 2C       		.byte	44
+ 250 00de 16       		.byte	22
+ 251 00df 20       		.byte	32
+ 252 00e0 17       		.byte	23
+ 253 00e1 43       		.byte	67
+ 254 00e2 18       		.byte	24
+ 255 00e3 0C       		.byte	12
+ 256 00e4 19       		.byte	25
+ 257 00e5 71       		.byte	113
+ 258 00e6 1A       		.byte	26
+ 259 00e7 11       		.byte	17
+ 260 00e8 1B       		.byte	27
+ 261 00e9 06       		.byte	6
+ 262 00ea 23       		.byte	35
+ 263 00eb 0C       		.byte	12
+ 264 00ec 24       		.byte	36
+ 265 00ed 14       		.byte	20
+ 266 00ee 25       		.byte	37
+ 267 00ef 71       		.byte	113
+ 268 00f0 27       		.byte	39
+ 269 00f1 0E       		.byte	14
+ 270 00f2 28       		.byte	40
+ 271 00f3 1C       		.byte	28
+ 272 00f4 2A       		.byte	42
+ 273 00f5 02       		.byte	2
+ 274 00f6 30       		.byte	48
+ 275 00f7 1F       		.byte	31
+ 276 00f8 31       		.byte	49
+ 277 00f9 C0       		.byte	-64
+ 278 00fa 33       		.byte	51
+ 279 00fb 0F       		.byte	15
+ 280 00fc 34       		.byte	52
+ 281 00fd 20       		.byte	32
+ 282 00fe 35       		.byte	53
+ 283 00ff 30       		.byte	48
+ 284 0100 39       		.byte	57
+ 285 0101 22       		.byte	34
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 6
+
+
+ 286 0102 3B       		.byte	59
+ 287 0103 08       		.byte	8
+ 288 0104 3E       		.byte	62
+ 289 0105 10       		.byte	16
+ 290 0106 3F       		.byte	63
+ 291 0107 10       		.byte	16
+ 292 0108 40       		.byte	64
+ 293 0109 02       		.byte	2
+ 294 010a 45       		.byte	69
+ 295 010b 04       		.byte	4
+ 296 010c 49       		.byte	73
+ 297 010d FF       		.byte	-1
+ 298 010e 4A       		.byte	74
+ 299 010f 07       		.byte	7
+ 300 0110 4B       		.byte	75
+ 301 0111 FF       		.byte	-1
+ 302 0112 4C       		.byte	76
+ 303 0113 40       		.byte	64
+ 304 0114 4D       		.byte	77
+ 305 0115 20       		.byte	32
+ 306 0116 4E       		.byte	78
+ 307 0117 F0       		.byte	-16
+ 308 0118 4F       		.byte	79
+ 309 0119 05       		.byte	5
+ 310 011a 50       		.byte	80
+ 311 011b 08       		.byte	8
+ 312 011c 58       		.byte	88
+ 313 011d 04       		.byte	4
+ 314 011e 59       		.byte	89
+ 315 011f 04       		.byte	4
+ 316 0120 5A       		.byte	90
+ 317 0121 04       		.byte	4
+ 318 0122 5F       		.byte	95
+ 319 0123 01       		.byte	1
+ 320 0124 60       		.byte	96
+ 321 0125 40       		.byte	64
+ 322 0126 61       		.byte	97
+ 323 0127 A8       		.byte	-88
+ 324 0128 62       		.byte	98
+ 325 0129 40       		.byte	64
+ 326 012a 63       		.byte	99
+ 327 012b 20       		.byte	32
+ 328 012c 81       		.byte	-127
+ 329 012d 48       		.byte	72
+ 330 012e 82       		.byte	-126
+ 331 012f 35       		.byte	53
+ 332 0130 83       		.byte	-125
+ 333 0131 34       		.byte	52
+ 334 0132 84       		.byte	-124
+ 335 0133 4A       		.byte	74
+ 336 0134 85       		.byte	-123
+ 337 0135 F8       		.byte	-8
+ 338 0136 86       		.byte	-122
+ 339 0137 34       		.byte	52
+ 340 0138 88       		.byte	-120
+ 341 0139 13       		.byte	19
+ 342 013a 8A       		.byte	-118
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 7
+
+
+ 343 013b 2C       		.byte	44
+ 344 013c 8D       		.byte	-115
+ 345 013d 20       		.byte	32
+ 346 013e 8E       		.byte	-114
+ 347 013f 48       		.byte	72
+ 348 0140 8F       		.byte	-113
+ 349 0141 C2       		.byte	-62
+ 350 0142 93       		.byte	-109
+ 351 0143 01       		.byte	1
+ 352 0144 95       		.byte	-107
+ 353 0145 01       		.byte	1
+ 354 0146 98       		.byte	-104
+ 355 0147 03       		.byte	3
+ 356 0148 99       		.byte	-103
+ 357 0149 90       		.byte	-112
+ 358 014a 9A       		.byte	-102
+ 359 014b 14       		.byte	20
+ 360 014c 9B       		.byte	-101
+ 361 014d 2C       		.byte	44
+ 362 014e A1       		.byte	-95
+ 363 014f 01       		.byte	1
+ 364 0150 A4       		.byte	-92
+ 365 0151 13       		.byte	19
+ 366 0152 A6       		.byte	-90
+ 367 0153 64       		.byte	100
+ 368 0154 A9       		.byte	-87
+ 369 0155 F8       		.byte	-8
+ 370 0156 AA       		.byte	-86
+ 371 0157 40       		.byte	64
+ 372 0158 AF       		.byte	-81
+ 373 0159 01       		.byte	1
+ 374 015a B0       		.byte	-80
+ 375 015b 10       		.byte	16
+ 376 015c B1       		.byte	-79
+ 377 015d 06       		.byte	6
+ 378 015e B2       		.byte	-78
+ 379 015f 68       		.byte	104
+ 380 0160 B3       		.byte	-77
+ 381 0161 01       		.byte	1
+ 382 0162 B4       		.byte	-76
+ 383 0163 0F       		.byte	15
+ 384 0164 B5       		.byte	-75
+ 385 0165 18       		.byte	24
+ 386 0166 B7       		.byte	-73
+ 387 0167 E0       		.byte	-32
+ 388 0168 B9       		.byte	-71
+ 389 0169 08       		.byte	8
+ 390 016a BA       		.byte	-70
+ 391 016b 28       		.byte	40
+ 392 016c BE       		.byte	-66
+ 393 016d 01       		.byte	1
+ 394 016e BF       		.byte	-65
+ 395 016f 01       		.byte	1
+ 396 0170 C0       		.byte	-64
+ 397 0171 24       		.byte	36
+ 398 0172 C1       		.byte	-63
+ 399 0173 03       		.byte	3
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 8
+
+
+ 400 0174 C5       		.byte	-59
+ 401 0175 0C       		.byte	12
+ 402 0176 C6       		.byte	-58
+ 403 0177 CE       		.byte	-50
+ 404 0178 C7       		.byte	-57
+ 405 0179 0B       		.byte	11
+ 406 017a C8       		.byte	-56
+ 407 017b 1D       		.byte	29
+ 408 017c C9       		.byte	-55
+ 409 017d FF       		.byte	-1
+ 410 017e CA       		.byte	-54
+ 411 017f FF       		.byte	-1
+ 412 0180 CB       		.byte	-53
+ 413 0181 FF       		.byte	-1
+ 414 0182 CE       		.byte	-50
+ 415 0183 F0       		.byte	-16
+ 416 0184 CF       		.byte	-49
+ 417 0185 44       		.byte	68
+ 418 0186 D0       		.byte	-48
+ 419 0187 0C       		.byte	12
+ 420 0188 D4       		.byte	-44
+ 421 0189 01       		.byte	1
+ 422 018a D8       		.byte	-40
+ 423 018b 04       		.byte	4
+ 424 018c D9       		.byte	-39
+ 425 018d 04       		.byte	4
+ 426 018e DA       		.byte	-38
+ 427 018f 04       		.byte	4
+ 428 0190 DB       		.byte	-37
+ 429 0191 04       		.byte	4
+ 430 0192 DF       		.byte	-33
+ 431 0193 01       		.byte	1
+ 432 0194 E6       		.byte	-26
+ 433 0195 C0       		.byte	-64
+ 434 0196 EA       		.byte	-22
+ 435 0197 40       		.byte	64
+ 436 0198 EB       		.byte	-21
+ 437 0199 02       		.byte	2
+ 438 019a 00       		.byte	0
+ 439 019b 60       		.byte	96
+ 440 019c 01       		.byte	1
+ 441 019d 02       		.byte	2
+ 442 019e 02       		.byte	2
+ 443 019f 01       		.byte	1
+ 444 01a0 03       		.byte	3
+ 445 01a1 10       		.byte	16
+ 446 01a2 04       		.byte	4
+ 447 01a3 40       		.byte	64
+ 448 01a4 05       		.byte	5
+ 449 01a5 10       		.byte	16
+ 450 01a6 06       		.byte	6
+ 451 01a7 40       		.byte	64
+ 452 01a8 07       		.byte	7
+ 453 01a9 20       		.byte	32
+ 454 01aa 08       		.byte	8
+ 455 01ab 10       		.byte	16
+ 456 01ac 09       		.byte	9
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 9
+
+
+ 457 01ad 09       		.byte	9
+ 458 01ae 0F       		.byte	15
+ 459 01af 08       		.byte	8
+ 460 01b0 11       		.byte	17
+ 461 01b1 08       		.byte	8
+ 462 01b2 12       		.byte	18
+ 463 01b3 08       		.byte	8
+ 464 01b4 14       		.byte	20
+ 465 01b5 10       		.byte	16
+ 466 01b6 16       		.byte	22
+ 467 01b7 04       		.byte	4
+ 468 01b8 18       		.byte	24
+ 469 01b9 04       		.byte	4
+ 470 01ba 19       		.byte	25
+ 471 01bb 02       		.byte	2
+ 472 01bc 1D       		.byte	29
+ 473 01bd 14       		.byte	20
+ 474 01be 1E       		.byte	30
+ 475 01bf 40       		.byte	64
+ 476 01c0 20       		.byte	32
+ 477 01c1 40       		.byte	64
+ 478 01c2 21       		.byte	33
+ 479 01c3 10       		.byte	16
+ 480 01c4 22       		.byte	34
+ 481 01c5 08       		.byte	8
+ 482 01c6 23       		.byte	35
+ 483 01c7 20       		.byte	32
+ 484 01c8 25       		.byte	37
+ 485 01c9 48       		.byte	72
+ 486 01ca 26       		.byte	38
+ 487 01cb 10       		.byte	16
+ 488 01cc 27       		.byte	39
+ 489 01cd 40       		.byte	64
+ 490 01ce 28       		.byte	40
+ 491 01cf 10       		.byte	16
+ 492 01d0 29       		.byte	41
+ 493 01d1 04       		.byte	4
+ 494 01d2 2A       		.byte	42
+ 495 01d3 01       		.byte	1
+ 496 01d4 2C       		.byte	44
+ 497 01d5 41       		.byte	65
+ 498 01d6 2F       		.byte	47
+ 499 01d7 08       		.byte	8
+ 500 01d8 31       		.byte	49
+ 501 01d9 10       		.byte	16
+ 502 01da 32       		.byte	50
+ 503 01db 08       		.byte	8
+ 504 01dc 33       		.byte	51
+ 505 01dd 10       		.byte	16
+ 506 01de 35       		.byte	53
+ 507 01df 01       		.byte	1
+ 508 01e0 36       		.byte	54
+ 509 01e1 14       		.byte	20
+ 510 01e2 38       		.byte	56
+ 511 01e3 80       		.byte	-128
+ 512 01e4 3A       		.byte	58
+ 513 01e5 04       		.byte	4
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 10
+
+
+ 514 01e6 3B       		.byte	59
+ 515 01e7 04       		.byte	4
+ 516 01e8 3D       		.byte	61
+ 517 01e9 80       		.byte	-128
+ 518 01ea 3E       		.byte	62
+ 519 01eb 06       		.byte	6
+ 520 01ec 41       		.byte	65
+ 521 01ed 10       		.byte	16
+ 522 01ee 44       		.byte	68
+ 523 01ef 10       		.byte	16
+ 524 01f0 46       		.byte	70
+ 525 01f1 40       		.byte	64
+ 526 01f2 47       		.byte	71
+ 527 01f3 10       		.byte	16
+ 528 01f4 48       		.byte	72
+ 529 01f5 10       		.byte	16
+ 530 01f6 4B       		.byte	75
+ 531 01f7 04       		.byte	4
+ 532 01f8 4F       		.byte	79
+ 533 01f9 08       		.byte	8
+ 534 01fa 50       		.byte	80
+ 535 01fb 40       		.byte	64
+ 536 01fc 52       		.byte	82
+ 537 01fd 40       		.byte	64
+ 538 01fe 55       		.byte	85
+ 539 01ff 04       		.byte	4
+ 540 0200 57       		.byte	87
+ 541 0201 50       		.byte	80
+ 542 0202 5D       		.byte	93
+ 543 0203 01       		.byte	1
+ 544 0204 5E       		.byte	94
+ 545 0205 40       		.byte	64
+ 546 0206 5F       		.byte	95
+ 547 0207 18       		.byte	24
+ 548 0208 63       		.byte	99
+ 549 0209 30       		.byte	48
+ 550 020a 79       		.byte	121
+ 551 020b 01       		.byte	1
+ 552 020c 7B       		.byte	123
+ 553 020d 40       		.byte	64
+ 554 020e 89       		.byte	-119
+ 555 020f 08       		.byte	8
+ 556 0210 8A       		.byte	-118
+ 557 0211 02       		.byte	2
+ 558 0212 92       		.byte	-110
+ 559 0213 04       		.byte	4
+ 560 0214 94       		.byte	-108
+ 561 0215 04       		.byte	4
+ 562 0216 98       		.byte	-104
+ 563 0217 41       		.byte	65
+ 564 0218 99       		.byte	-103
+ 565 0219 01       		.byte	1
+ 566 021a 9B       		.byte	-101
+ 567 021b 08       		.byte	8
+ 568 021c 9D       		.byte	-99
+ 569 021d 0A       		.byte	10
+ 570 021e 9F       		.byte	-97
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 11
+
+
+ 571 021f 40       		.byte	64
+ 572 0220 A1       		.byte	-95
+ 573 0221 01       		.byte	1
+ 574 0222 A2       		.byte	-94
+ 575 0223 04       		.byte	4
+ 576 0224 A3       		.byte	-93
+ 577 0225 08       		.byte	8
+ 578 0226 A5       		.byte	-91
+ 579 0227 40       		.byte	64
+ 580 0228 A6       		.byte	-90
+ 581 0229 10       		.byte	16
+ 582 022a A7       		.byte	-89
+ 583 022b 40       		.byte	64
+ 584 022c B2       		.byte	-78
+ 585 022d 12       		.byte	18
+ 586 022e C0       		.byte	-64
+ 587 022f FF       		.byte	-1
+ 588 0230 C2       		.byte	-62
+ 589 0231 4E       		.byte	78
+ 590 0232 C4       		.byte	-60
+ 591 0233 66       		.byte	102
+ 592 0234 CA       		.byte	-54
+ 593 0235 B3       		.byte	-77
+ 594 0236 CC       		.byte	-52
+ 595 0237 E6       		.byte	-26
+ 596 0238 CE       		.byte	-50
+ 597 0239 DA       		.byte	-38
+ 598 023a D0       		.byte	-48
+ 599 023b E4       		.byte	-28
+ 600 023c D6       		.byte	-42
+ 601 023d F0       		.byte	-16
+ 602 023e 87       		.byte	-121
+ 603 023f 10       		.byte	16
+ 604 0240 10       		.byte	16
+ 605 0241 40       		.byte	64
+ 606 0242 73       		.byte	115
+ 607 0243 10       		.byte	16
+ 608 0244 88       		.byte	-120
+ 609 0245 40       		.byte	64
+ 610 0246 93       		.byte	-109
+ 611 0247 10       		.byte	16
+ 612 0248 C4       		.byte	-60
+ 613 0249 08       		.byte	8
+ 614 024a DC       		.byte	-36
+ 615 024b 01       		.byte	1
+ 616 024c E2       		.byte	-30
+ 617 024d 01       		.byte	1
+ 618 024e 10       		.byte	16
+ 619 024f 01       		.byte	1
+ 620 0250 1C       		.byte	28
+ 621 0251 01       		.byte	1
+ 622 0252 00       		.byte	0
+ 623 0253 00       		.byte	0
+ 624 0254 1F       		.byte	31
+ 625 0255 80       		.byte	-128
+ 626 0256 20       		.byte	32
+ 627 0257 00       		.byte	0
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 12
+
+
+ 628 0258 01       		.byte	1
+ 629 0259 00       		.byte	0
+ 630 025a 00       		.byte	0
+ 631 025b 04       		.byte	4
+ 632 025c 04       		.byte	4
+ 633 025d 18       		.byte	24
+ 634 025e 00       		.byte	0
+ 635 025f 00       		.byte	0
+ 636 0260 08       		.byte	8
+ 637 0261 C0       		.byte	-64
+ 638 0262 00       		.byte	0
+ 639 0263 00       		.byte	0
+ 640 0264 1C       		.byte	28
+ 641 0265 1C       		.byte	28
+ 642 0266 23       		.byte	35
+ 643 0267 E1       		.byte	-31
+ 644 0268 00       		.byte	0
+ 645 0269 08       		.byte	8
+ 646 026a 23       		.byte	35
+ 647 026b 00       		.byte	0
+ 648 026c 33       		.byte	51
+ 649 026d 00       		.byte	0
+ 650 026e 0C       		.byte	12
+ 651 026f E3       		.byte	-29
+ 652 0270 3F       		.byte	63
+ 653 0271 10       		.byte	16
+ 654 0272 00       		.byte	0
+ 655 0273 00       		.byte	0
+ 656 0274 03       		.byte	3
+ 657 0275 FF       		.byte	-1
+ 658 0276 00       		.byte	0
+ 659 0277 00       		.byte	0
+ 660 0278 00       		.byte	0
+ 661 0279 44       		.byte	68
+ 662 027a 00       		.byte	0
+ 663 027b 00       		.byte	0
+ 664 027c 0C       		.byte	12
+ 665 027d E7       		.byte	-25
+ 666 027e 00       		.byte	0
+ 667 027f 18       		.byte	24
+ 668 0280 02       		.byte	2
+ 669 0281 3C       		.byte	60
+ 670 0282 00       		.byte	0
+ 671 0283 C2       		.byte	-62
+ 672 0284 2C       		.byte	44
+ 673 0285 1F       		.byte	31
+ 674 0286 10       		.byte	16
+ 675 0287 38       		.byte	56
+ 676 0288 0F       		.byte	15
+ 677 0289 00       		.byte	0
+ 678 028a 00       		.byte	0
+ 679 028b C0       		.byte	-64
+ 680 028c 00       		.byte	0
+ 681 028d 00       		.byte	0
+ 682 028e A2       		.byte	-94
+ 683 028f 02       		.byte	2
+ 684 0290 00       		.byte	0
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 13
+
+
+ 685 0291 00       		.byte	0
+ 686 0292 04       		.byte	4
+ 687 0293 00       		.byte	0
+ 688 0294 26       		.byte	38
+ 689 0295 04       		.byte	4
+ 690 0296 03       		.byte	3
+ 691 0297 00       		.byte	0
+ 692 0298 01       		.byte	1
+ 693 0299 0C       		.byte	12
+ 694 029a 00       		.byte	0
+ 695 029b E0       		.byte	-32
+ 696 029c 21       		.byte	33
+ 697 029d FF       		.byte	-1
+ 698 029e FF       		.byte	-1
+ 699 029f FF       		.byte	-1
+ 700 02a0 62       		.byte	98
+ 701 02a1 A0       		.byte	-96
+ 702 02a2 F0       		.byte	-16
+ 703 02a3 41       		.byte	65
+ 704 02a4 0C       		.byte	12
+ 705 02a5 00       		.byte	0
+ 706 02a6 00       		.byte	0
+ 707 02a7 00       		.byte	0
+ 708 02a8 00       		.byte	0
+ 709 02a9 00       		.byte	0
+ 710 02aa 02       		.byte	2
+ 711 02ab 11       		.byte	17
+ 712 02ac 04       		.byte	4
+ 713 02ad 04       		.byte	4
+ 714 02ae 04       		.byte	4
+ 715 02af 04       		.byte	4
+ 716 02b0 00       		.byte	0
+ 717 02b1 00       		.byte	0
+ 718 02b2 00       		.byte	0
+ 719 02b3 01       		.byte	1
+ 720 02b4 00       		.byte	0
+ 721 02b5 00       		.byte	0
+ 722 02b6 00       		.byte	0
+ 723 02b7 00       		.byte	0
+ 724 02b8 00       		.byte	0
+ 725 02b9 00       		.byte	0
+ 726 02ba 40       		.byte	64
+ 727 02bb 02       		.byte	2
+ 728 02bc 00       		.byte	0
+ 729 02bd 10       		.byte	16
+ 730 02be 30       		.byte	48
+ 731 02bf 10       		.byte	16
+ 732 02c0 00       		.byte	0
+ 733 02c1 10       		.byte	16
+ 734 02c2 10       		.byte	16
+ 735 02c3 12       		.byte	18
+ 736 02c4 00       		.byte	0
+ 737 02c5 00       		.byte	0
+ 738 02c6 00       		.byte	0
+ 739 02c7 00       		.byte	0
+ 740 02c8 00       		.byte	0
+ 741 02c9 00       		.byte	0
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 14
+
+
+ 742 02ca 00       		.byte	0
+ 743 02cb 00       		.byte	0
+ 744 02cc 00       		.byte	0
+ 745 02cd 00       		.byte	0
+ 746 02ce 00       		.byte	0
+ 747 02cf 00       		.byte	0
+ 748 02d0 00       		.byte	0
+ 749 02d1 00       		.byte	0
+ 750 02d2 00       		.byte	0
+ 751 02d3 00       		.byte	0
+ 752 02d4 80       		.byte	-128
+ 753 02d5 00       		.byte	0
+ 754 02d6 40       		.byte	64
+ 755 02d7 80       		.byte	-128
+ 756 02d8 80       		.byte	-128
+ 757 02d9 00       		.byte	0
+ 758 02da 80       		.byte	-128
+ 759 02db 00       		.byte	0
+ 760 02dc 00       		.byte	0
+ 761 02dd 00       		.byte	0
+ 762 02de 00       		.byte	0
+ 763 02df 00       		.byte	0
+ 764 02e0 00       		.byte	0
+ 765 02e1 0B       		.byte	11
+ 766 02e2 0B       		.byte	11
+ 767 02e3 00       		.byte	0
+ 768 02e4 00       		.byte	0
+ 769 02e5 00       		.byte	0
+ 770 02e6 00       		.byte	0
+ 771 02e7 00       		.byte	0
+ 772              		.section	.cywolatch,"a",%progbits
+ 773              		.align	2
+ 774              		.type	cy_meta_wonvl, %object
+ 775              		.size	cy_meta_wonvl, 4
+ 776              	cy_meta_wonvl:
+ 777 0000 BC       		.byte	-68
+ 778 0001 90       		.byte	-112
+ 779 0002 AC       		.byte	-84
+ 780 0003 AF       		.byte	-81
+ 781              		.section	.cycustnvl,"a",%progbits
+ 782              		.align	2
+ 783              		.type	cy_meta_custnvl, %object
+ 784              		.size	cy_meta_custnvl, 4
+ 785              	cy_meta_custnvl:
+ 786 0000 00       		.byte	0
+ 787 0001 00       		.byte	0
+ 788 0002 40       		.byte	64
+ 789 0003 05       		.byte	5
+ 790              		.section	.cymeta,"a",%progbits
+ 791              		.align	2
+ 792              		.type	cy_metadata, %object
+ 793              		.size	cy_metadata, 12
+ 794              	cy_metadata:
+ 795 0000 00       		.byte	0
+ 796 0001 01       		.byte	1
+ 797 0002 2E       		.byte	46
+ 798 0003 16       		.byte	22
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 15
+
+
+ 799 0004 10       		.byte	16
+ 800 0005 69       		.byte	105
+ 801 0006 00       		.byte	0
+ 802 0007 01       		.byte	1
+ 803 0008 00       		.byte	0
+ 804 0009 00       		.byte	0
+ 805 000a 00       		.byte	0
+ 806 000b 00       		.byte	0
+ 807              		.section	.cyflashprotect,"a",%progbits
+ 808              		.align	2
+ 809              		.type	cy_meta_flashprotect, %object
+ 810              		.size	cy_meta_flashprotect, 256
+ 811              	cy_meta_flashprotect:
+ 812 0000 00000000 		.space	256
+ 812      00000000 
+ 812      00000000 
+ 812      00000000 
+ 812      00000000 
+ 813              		.text
+ 814              	.Letext0:
+ 815              		.file 1 "Generated_Source\\PSoC5\\cymetadata.c"
+ 816              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 817              		.section	.debug_info,"",%progbits
+ 818              	.Ldebug_info0:
+ 819 0000 37010000 		.4byte	0x137
+ 820 0004 0400     		.2byte	0x4
+ 821 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 822 000a 04       		.byte	0x4
+ 823 000b 01       		.uleb128 0x1
+ 824 000c BF000000 		.4byte	.LASF18
+ 825 0010 01       		.byte	0x1
+ 826 0011 D5010000 		.4byte	.LASF19
+ 827 0015 00000000 		.4byte	.LASF20
+ 828 0019 00000000 		.4byte	.Ldebug_line0
+ 829 001d 02       		.uleb128 0x2
+ 830 001e 01       		.byte	0x1
+ 831 001f 06       		.byte	0x6
+ 832 0020 C9010000 		.4byte	.LASF0
+ 833 0024 02       		.uleb128 0x2
+ 834 0025 01       		.byte	0x1
+ 835 0026 08       		.byte	0x8
+ 836 0027 63000000 		.4byte	.LASF1
+ 837 002b 02       		.uleb128 0x2
+ 838 002c 02       		.byte	0x2
+ 839 002d 05       		.byte	0x5
+ 840 002e B0010000 		.4byte	.LASF2
+ 841 0032 02       		.uleb128 0x2
+ 842 0033 02       		.byte	0x2
+ 843 0034 07       		.byte	0x7
+ 844 0035 83000000 		.4byte	.LASF3
+ 845 0039 02       		.uleb128 0x2
+ 846 003a 04       		.byte	0x4
+ 847 003b 05       		.byte	0x5
+ 848 003c C0010000 		.4byte	.LASF4
+ 849 0040 02       		.uleb128 0x2
+ 850 0041 04       		.byte	0x4
+ 851 0042 07       		.byte	0x7
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 16
+
+
+ 852 0043 71000000 		.4byte	.LASF5
+ 853 0047 02       		.uleb128 0x2
+ 854 0048 08       		.byte	0x8
+ 855 0049 05       		.byte	0x5
+ 856 004a 9D010000 		.4byte	.LASF6
+ 857 004e 02       		.uleb128 0x2
+ 858 004f 08       		.byte	0x8
+ 859 0050 07       		.byte	0x7
+ 860 0051 5A010000 		.4byte	.LASF7
+ 861 0055 03       		.uleb128 0x3
+ 862 0056 04       		.byte	0x4
+ 863 0057 05       		.byte	0x5
+ 864 0058 696E7400 		.ascii	"int\000"
+ 865 005c 02       		.uleb128 0x2
+ 866 005d 04       		.byte	0x4
+ 867 005e 07       		.byte	0x7
+ 868 005f 4D010000 		.4byte	.LASF8
+ 869 0063 04       		.uleb128 0x4
+ 870 0064 BA010000 		.4byte	.LASF21
+ 871 0068 02       		.byte	0x2
+ 872 0069 9201     		.2byte	0x192
+ 873 006b 24000000 		.4byte	0x24
+ 874 006f 02       		.uleb128 0x2
+ 875 0070 04       		.byte	0x4
+ 876 0071 04       		.byte	0x4
+ 877 0072 5D000000 		.4byte	.LASF9
+ 878 0076 02       		.uleb128 0x2
+ 879 0077 08       		.byte	0x8
+ 880 0078 04       		.byte	0x4
+ 881 0079 96000000 		.4byte	.LASF10
+ 882 007d 02       		.uleb128 0x2
+ 883 007e 01       		.byte	0x1
+ 884 007f 08       		.byte	0x8
+ 885 0080 AB010000 		.4byte	.LASF11
+ 886 0084 05       		.uleb128 0x5
+ 887 0085 63000000 		.4byte	0x63
+ 888 0089 95000000 		.4byte	0x95
+ 889 008d 06       		.uleb128 0x6
+ 890 008e 95000000 		.4byte	0x95
+ 891 0092 E702     		.2byte	0x2e7
+ 892 0094 00       		.byte	0
+ 893 0095 02       		.uleb128 0x2
+ 894 0096 04       		.byte	0x4
+ 895 0097 07       		.byte	0x7
+ 896 0098 94010000 		.4byte	.LASF12
+ 897 009c 07       		.uleb128 0x7
+ 898 009d AD000000 		.4byte	.LASF13
+ 899 00a1 01       		.byte	0x1
+ 900 00a2 1F       		.byte	0x1f
+ 901 00a3 AD000000 		.4byte	0xad
+ 902 00a7 05       		.uleb128 0x5
+ 903 00a8 03       		.byte	0x3
+ 904 00a9 00000000 		.4byte	cy_meta_configecc
+ 905 00ad 08       		.uleb128 0x8
+ 906 00ae 84000000 		.4byte	0x84
+ 907 00b2 05       		.uleb128 0x5
+ 908 00b3 63000000 		.4byte	0x63
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 17
+
+
+ 909 00b7 C2000000 		.4byte	0xc2
+ 910 00bb 09       		.uleb128 0x9
+ 911 00bc 95000000 		.4byte	0x95
+ 912 00c0 03       		.byte	0x3
+ 913 00c1 00       		.byte	0
+ 914 00c2 07       		.uleb128 0x7
+ 915 00c3 9D000000 		.4byte	.LASF14
+ 916 00c7 01       		.byte	0x1
+ 917 00c8 89       		.byte	0x89
+ 918 00c9 D3000000 		.4byte	0xd3
+ 919 00cd 05       		.uleb128 0x5
+ 920 00ce 03       		.byte	0x3
+ 921 00cf 00000000 		.4byte	cy_meta_custnvl
+ 922 00d3 08       		.uleb128 0x8
+ 923 00d4 B2000000 		.4byte	0xb2
+ 924 00d8 07       		.uleb128 0x7
+ 925 00d9 86010000 		.4byte	.LASF15
+ 926 00dd 01       		.byte	0x1
+ 927 00de 97       		.byte	0x97
+ 928 00df E9000000 		.4byte	0xe9
+ 929 00e3 05       		.uleb128 0x5
+ 930 00e4 03       		.byte	0x3
+ 931 00e5 00000000 		.4byte	cy_meta_wonvl
+ 932 00e9 08       		.uleb128 0x8
+ 933 00ea B2000000 		.4byte	0xb2
+ 934 00ee 05       		.uleb128 0x5
+ 935 00ef 63000000 		.4byte	0x63
+ 936 00f3 FE000000 		.4byte	0xfe
+ 937 00f7 09       		.uleb128 0x9
+ 938 00f8 95000000 		.4byte	0x95
+ 939 00fc FF       		.byte	0xff
+ 940 00fd 00       		.byte	0
+ 941 00fe 07       		.uleb128 0x7
+ 942 00ff 71010000 		.4byte	.LASF16
+ 943 0103 01       		.byte	0x1
+ 944 0104 A5       		.byte	0xa5
+ 945 0105 0F010000 		.4byte	0x10f
+ 946 0109 05       		.uleb128 0x5
+ 947 010a 03       		.byte	0x3
+ 948 010b 00000000 		.4byte	cy_meta_flashprotect
+ 949 010f 08       		.uleb128 0x8
+ 950 0110 EE000000 		.4byte	0xee
+ 951 0114 05       		.uleb128 0x5
+ 952 0115 63000000 		.4byte	0x63
+ 953 0119 24010000 		.4byte	0x124
+ 954 011d 09       		.uleb128 0x9
+ 955 011e 95000000 		.4byte	0x95
+ 956 0122 0B       		.byte	0xb
+ 957 0123 00       		.byte	0
+ 958 0124 07       		.uleb128 0x7
+ 959 0125 51000000 		.4byte	.LASF17
+ 960 0129 01       		.byte	0x1
+ 961 012a D2       		.byte	0xd2
+ 962 012b 35010000 		.4byte	0x135
+ 963 012f 05       		.uleb128 0x5
+ 964 0130 03       		.byte	0x3
+ 965 0131 00000000 		.4byte	cy_metadata
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 18
+
+
+ 966 0135 08       		.uleb128 0x8
+ 967 0136 14010000 		.4byte	0x114
+ 968 013a 00       		.byte	0
+ 969              		.section	.debug_abbrev,"",%progbits
+ 970              	.Ldebug_abbrev0:
+ 971 0000 01       		.uleb128 0x1
+ 972 0001 11       		.uleb128 0x11
+ 973 0002 01       		.byte	0x1
+ 974 0003 25       		.uleb128 0x25
+ 975 0004 0E       		.uleb128 0xe
+ 976 0005 13       		.uleb128 0x13
+ 977 0006 0B       		.uleb128 0xb
+ 978 0007 03       		.uleb128 0x3
+ 979 0008 0E       		.uleb128 0xe
+ 980 0009 1B       		.uleb128 0x1b
+ 981 000a 0E       		.uleb128 0xe
+ 982 000b 10       		.uleb128 0x10
+ 983 000c 17       		.uleb128 0x17
+ 984 000d 00       		.byte	0
+ 985 000e 00       		.byte	0
+ 986 000f 02       		.uleb128 0x2
+ 987 0010 24       		.uleb128 0x24
+ 988 0011 00       		.byte	0
+ 989 0012 0B       		.uleb128 0xb
+ 990 0013 0B       		.uleb128 0xb
+ 991 0014 3E       		.uleb128 0x3e
+ 992 0015 0B       		.uleb128 0xb
+ 993 0016 03       		.uleb128 0x3
+ 994 0017 0E       		.uleb128 0xe
+ 995 0018 00       		.byte	0
+ 996 0019 00       		.byte	0
+ 997 001a 03       		.uleb128 0x3
+ 998 001b 24       		.uleb128 0x24
+ 999 001c 00       		.byte	0
+ 1000 001d 0B       		.uleb128 0xb
+ 1001 001e 0B       		.uleb128 0xb
+ 1002 001f 3E       		.uleb128 0x3e
+ 1003 0020 0B       		.uleb128 0xb
+ 1004 0021 03       		.uleb128 0x3
+ 1005 0022 08       		.uleb128 0x8
+ 1006 0023 00       		.byte	0
+ 1007 0024 00       		.byte	0
+ 1008 0025 04       		.uleb128 0x4
+ 1009 0026 16       		.uleb128 0x16
+ 1010 0027 00       		.byte	0
+ 1011 0028 03       		.uleb128 0x3
+ 1012 0029 0E       		.uleb128 0xe
+ 1013 002a 3A       		.uleb128 0x3a
+ 1014 002b 0B       		.uleb128 0xb
+ 1015 002c 3B       		.uleb128 0x3b
+ 1016 002d 05       		.uleb128 0x5
+ 1017 002e 49       		.uleb128 0x49
+ 1018 002f 13       		.uleb128 0x13
+ 1019 0030 00       		.byte	0
+ 1020 0031 00       		.byte	0
+ 1021 0032 05       		.uleb128 0x5
+ 1022 0033 01       		.uleb128 0x1
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 19
+
+
+ 1023 0034 01       		.byte	0x1
+ 1024 0035 49       		.uleb128 0x49
+ 1025 0036 13       		.uleb128 0x13
+ 1026 0037 01       		.uleb128 0x1
+ 1027 0038 13       		.uleb128 0x13
+ 1028 0039 00       		.byte	0
+ 1029 003a 00       		.byte	0
+ 1030 003b 06       		.uleb128 0x6
+ 1031 003c 21       		.uleb128 0x21
+ 1032 003d 00       		.byte	0
+ 1033 003e 49       		.uleb128 0x49
+ 1034 003f 13       		.uleb128 0x13
+ 1035 0040 2F       		.uleb128 0x2f
+ 1036 0041 05       		.uleb128 0x5
+ 1037 0042 00       		.byte	0
+ 1038 0043 00       		.byte	0
+ 1039 0044 07       		.uleb128 0x7
+ 1040 0045 34       		.uleb128 0x34
+ 1041 0046 00       		.byte	0
+ 1042 0047 03       		.uleb128 0x3
+ 1043 0048 0E       		.uleb128 0xe
+ 1044 0049 3A       		.uleb128 0x3a
+ 1045 004a 0B       		.uleb128 0xb
+ 1046 004b 3B       		.uleb128 0x3b
+ 1047 004c 0B       		.uleb128 0xb
+ 1048 004d 49       		.uleb128 0x49
+ 1049 004e 13       		.uleb128 0x13
+ 1050 004f 3F       		.uleb128 0x3f
+ 1051 0050 19       		.uleb128 0x19
+ 1052 0051 02       		.uleb128 0x2
+ 1053 0052 18       		.uleb128 0x18
+ 1054 0053 00       		.byte	0
+ 1055 0054 00       		.byte	0
+ 1056 0055 08       		.uleb128 0x8
+ 1057 0056 26       		.uleb128 0x26
+ 1058 0057 00       		.byte	0
+ 1059 0058 49       		.uleb128 0x49
+ 1060 0059 13       		.uleb128 0x13
+ 1061 005a 00       		.byte	0
+ 1062 005b 00       		.byte	0
+ 1063 005c 09       		.uleb128 0x9
+ 1064 005d 21       		.uleb128 0x21
+ 1065 005e 00       		.byte	0
+ 1066 005f 49       		.uleb128 0x49
+ 1067 0060 13       		.uleb128 0x13
+ 1068 0061 2F       		.uleb128 0x2f
+ 1069 0062 0B       		.uleb128 0xb
+ 1070 0063 00       		.byte	0
+ 1071 0064 00       		.byte	0
+ 1072 0065 00       		.byte	0
+ 1073              		.section	.debug_aranges,"",%progbits
+ 1074 0000 14000000 		.4byte	0x14
+ 1075 0004 0200     		.2byte	0x2
+ 1076 0006 00000000 		.4byte	.Ldebug_info0
+ 1077 000a 04       		.byte	0x4
+ 1078 000b 00       		.byte	0
+ 1079 000c 0000     		.2byte	0
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 20
+
+
+ 1080 000e 0000     		.2byte	0
+ 1081 0010 00000000 		.4byte	0
+ 1082 0014 00000000 		.4byte	0
+ 1083              		.section	.debug_line,"",%progbits
+ 1084              	.Ldebug_line0:
+ 1085 0000 4D000000 		.section	.debug_str,"MS",%progbits,1
+ 1085      02004700 
+ 1085      00000201 
+ 1085      FB0E0D00 
+ 1085      01010101 
+ 1086              	.LASF20:
+ 1087 0000 433A5C55 		.ascii	"C:\\Users\\vellu\\OneDrive\\Tiedostot\\PSoC Creator"
+ 1087      73657273 
+ 1087      5C76656C 
+ 1087      6C755C4F 
+ 1087      6E654472 
+ 1088 002e 5C4B6F75 		.ascii	"\\KouluOhjelmointi\\Exercise18.cydsn\000"
+ 1088      6C754F68 
+ 1088      6A656C6D 
+ 1088      6F696E74 
+ 1088      695C4578 
+ 1089              	.LASF17:
+ 1090 0051 63795F6D 		.ascii	"cy_metadata\000"
+ 1090      65746164 
+ 1090      61746100 
+ 1091              	.LASF9:
+ 1092 005d 666C6F61 		.ascii	"float\000"
+ 1092      7400
+ 1093              	.LASF1:
+ 1094 0063 756E7369 		.ascii	"unsigned char\000"
+ 1094      676E6564 
+ 1094      20636861 
+ 1094      7200
+ 1095              	.LASF5:
+ 1096 0071 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1096      20756E73 
+ 1096      69676E65 
+ 1096      6420696E 
+ 1096      7400
+ 1097              	.LASF3:
+ 1098 0083 73686F72 		.ascii	"short unsigned int\000"
+ 1098      7420756E 
+ 1098      7369676E 
+ 1098      65642069 
+ 1098      6E7400
+ 1099              	.LASF10:
+ 1100 0096 646F7562 		.ascii	"double\000"
+ 1100      6C6500
+ 1101              	.LASF14:
+ 1102 009d 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1102      6574615F 
+ 1102      63757374 
+ 1102      6E766C00 
+ 1103              	.LASF13:
+ 1104 00ad 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1104      6574615F 
+ 1104      636F6E66 
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 21
+
+
+ 1104      69676563 
+ 1104      6300
+ 1105              	.LASF18:
+ 1106 00bf 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1106      4320342E 
+ 1106      392E3320 
+ 1106      32303135 
+ 1106      30333033 
+ 1107 00f2 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1107      20726576 
+ 1107      6973696F 
+ 1107      6E203232 
+ 1107      31323230 
+ 1108 0125 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1108      66756E63 
+ 1108      74696F6E 
+ 1108      2D736563 
+ 1108      74696F6E 
+ 1109              	.LASF8:
+ 1110 014d 756E7369 		.ascii	"unsigned int\000"
+ 1110      676E6564 
+ 1110      20696E74 
+ 1110      00
+ 1111              	.LASF7:
+ 1112 015a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1112      206C6F6E 
+ 1112      6720756E 
+ 1112      7369676E 
+ 1112      65642069 
+ 1113              	.LASF16:
+ 1114 0171 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1114      6574615F 
+ 1114      666C6173 
+ 1114      6870726F 
+ 1114      74656374 
+ 1115              	.LASF15:
+ 1116 0186 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1116      6574615F 
+ 1116      776F6E76 
+ 1116      6C00
+ 1117              	.LASF12:
+ 1118 0194 73697A65 		.ascii	"sizetype\000"
+ 1118      74797065 
+ 1118      00
+ 1119              	.LASF6:
+ 1120 019d 6C6F6E67 		.ascii	"long long int\000"
+ 1120      206C6F6E 
+ 1120      6720696E 
+ 1120      7400
+ 1121              	.LASF11:
+ 1122 01ab 63686172 		.ascii	"char\000"
+ 1122      00
+ 1123              	.LASF2:
+ 1124 01b0 73686F72 		.ascii	"short int\000"
+ 1124      7420696E 
+ 1124      7400
+ 1125              	.LASF21:
+ARM GAS  C:\Users\vellu\AppData\Local\Temp\ccevmPek.s 			page 22
+
+
+ 1126 01ba 75696E74 		.ascii	"uint8\000"
+ 1126      3800
+ 1127              	.LASF4:
+ 1128 01c0 6C6F6E67 		.ascii	"long int\000"
+ 1128      20696E74 
+ 1128      00
+ 1129              	.LASF0:
+ 1130 01c9 7369676E 		.ascii	"signed char\000"
+ 1130      65642063 
+ 1130      68617200 
+ 1131              	.LASF19:
+ 1132 01d5 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1132      72617465 
+ 1132      645F536F 
+ 1132      75726365 
+ 1132      5C50536F 
+ 1133              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
